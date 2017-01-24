@@ -1,0 +1,113 @@
+.nm-headerTop {
+  background: $nm-blue;
+  padding-top: 3vmin;
+  padding-bottom: 2vmin;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+  z-index: 200;
+  .container {
+    min-width: 100%;
+  }
+  .nm-headerTop__logo {
+    //justify-content: center;
+    .nm-headerTop__date {
+      margin: 0;
+      line-height: 1;
+      color:$nm-green;
+      text-align: right;
+      font-size: 6.5vw;
+    }
+  }
+  .nm-headerTop__nav {
+    display: none;
+    li {
+      a {
+        background: $nm-blue;
+      }
+    }
+  }
+  .current-menu-item {
+    transform: rotate(3deg) translateY(10px);
+
+    a {
+      border: 6px solid rgba(255,255,255,1);
+      //border-bottom: 8px solid $nm-green;
+      background: $nm-green !important;
+      font-weight: bold;
+      color: $nm-blackish;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .nm-headerTop {
+    .container {
+      min-width: 0;
+    }
+    .nm-headerTop__logo {
+      .nm-headerTop__date {
+        font-size: 4vw;
+      }
+    }
+    .nm-headerTop__nav {
+      display: flex;
+    }
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .nm-headerTop {
+    .nm-headerTop__logo {
+      .nm-headerTop__date {
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+
+.menu-header-menu-container {
+  ul {
+    display: flex;
+    justify-content: space-between;
+    margin:0;
+    padding: 3vmin 0 0 0;
+    list-style: none;
+
+    a {
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      padding: 1.6vmin;
+      font-family: $nm-font;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $nm-white;
+      background-color: rgba(0,0,0,0);
+      transition: background-color 2s ease;
+
+      &:hover {
+        background-color: lighten($nm-blue, 15%);
+        transition: background-color 0.3s ease;
+      }
+    }
+
+  }
+}
+
+
+.nm-fpIntro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:90vh;
+  background: $nm-green;
+  overflow: hidden;
+
+  h1 {
+    font-size: 4.5rem;
+  }
+  img {
+    height: 100vh;
+    transform: rotate(-10deg);
+    opacity: 0.3;
+  }
+}

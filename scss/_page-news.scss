@@ -1,0 +1,36 @@
+
+
+.nm-newsExcerpt {
+  flex: 1 0 100%;
+}
+
+.nm-newsExcerpt__date {
+  margin-bottom: 0.5rem;
+}
+
+.nm-newsExcerpt__title {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+  h2 {
+    margin: 0 0 0.5rem 0;
+  }
+}
+
+.nm-newsExcerpt__content {}
+
+.nm-newsExcerpt__btn {
+  background: $nm-green;
+  color: $nm-black;
+}
+
+
+
+
+
+@media (min-width: 992px){
+  .nm-newsExcerpt {
+    flex: 0 1 48.5%;
+  }
+}

@@ -1,0 +1,13 @@
+.nm-footer__logobar {
+  margin-top: 5vh;
+  padding-top: 5vmin;
+  padding-bottom: 5vmin;
+  background: $nm-white;
+  box-shadow: 0 -5px 10px 0 rgba(0,0,0,0.2);
+}
+
+footer {
+  //background: $nm-blackish;
+  background: hsla(222, 9%, 0%, 0.85);
+  min-height: 40vh;
+}
