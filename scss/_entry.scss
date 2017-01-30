@@ -5,6 +5,21 @@
     font-family: $nm-font;
     font-weight: bold;
   }
+  h1, h2, h3 {
+    &:before {
+      content: "";
+      display: block;
+      float: left;
+      //background: $nm-white;
+      width: 24px;
+      height: 24px;
+      margin-left: -12px;
+      vertical-align: baseline;
+      margin-right: 12px;
+      border: 9px solid $nm-orange;
+      border-radius: 50%;
+    }
+  }
 }
 
 .nm-columnsContainer {
@@ -19,9 +34,9 @@
   }
   .one_half {
     flex: 1 0 100%;
-    padding: 4vh 2vw 1vh 2vw;
+    padding: 4vh 3vw 1vh 4vw;
     &.last_column {
-      padding: 1vh 2vw 4vh 2vw;
+      padding: 1vh 3vw 4vh 4vw;
     }
   }
 }
@@ -83,6 +98,9 @@
 }
 
 
+
+
+
 @media screen and (min-width:768px) {
   .nm-columnsContainer {
 
@@ -90,10 +108,15 @@
 
     .one_half {
       flex: 1 0 48%;
-      padding: 4vh 2vw;
+      padding: 4vh 2vw 4vh 3vw;
       &.last_column {
-        padding: 4vh 2vw;
+        padding: 4vh 3vw 4vh 2vw;
       }
     }
   }
+
+  #wpgmza_map {
+    border: 10px solid $nm-blackish;
+  }
+
 }

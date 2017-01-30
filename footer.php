@@ -1,4 +1,4 @@
-	</div><!-- /.nm-mainContent-->
+		</section><!-- /.nm-mainContent-->
 
 		<!-- Sponsorite logod -->
 		<section class="container-fluid nm-footer__logobar">
@@ -22,26 +22,60 @@
 					}
 				?>
 			</div>
-			<?php // logo_slider(); ?>
 		</section>
 
 
 		<!-- FOOTER -->
 		<footer id="footer" class="container-fluid">
-			<div class="row">
-				<?php //dynamic_sidebar('footer') ?>
-				<h4>Korraldajad:</h4>
-				<div class="col-sm">
-					<img src="" alt="">
+			<div class="row align-items-center">
+				<div class="col-md-8" style="border-right: 1px dotted rgba(255,255,255,0.25)">
+
+					<div class="row">
+						<div class="col-sm-12" >
+							<h5 class="nm-footer__heading">Korraldajad:</h5>
+						</div>
+						<div class="col-sm-6">
+							<a href="http://www.innove.ee" target="_blank" class="nm-footer__partner">
+								<img class="nm-footer__logo__big" src="<?php echo get_template_directory_uri();?>/images/logo/innove_logo.svg" alt="Innove logo">
+							</a>
+						</div>
+						<div class="col-sm-6">
+							<a href="https://htm.ee/et" target="_blank" class="nm-footer__partner">
+								<img class="nm-footer__logo__big" src="<?php echo get_template_directory_uri();?>/images/logo/hm_logo.svg" alt="Haridus- ja teadusministeeriumi logo" style="margin-top:-15px;">
+							</a>
+						</div>
+					</div>
+
 				</div>
-				<div class="col-sm">
-					<img src="" alt="" >
+				<div class="col-md-4">
+					<div class="row">
+						<div class="col-sm-12">
+							<h5 class="nm-footer__heading">Suursponsor:</h5>
+						</div>
+						<div class="col-sm-12">
+							<a href="http://www.innove.ee" target="_blank" class="nm-footer__partner">
+								<img class="nm-footer__logo__big" src="<?php echo get_template_directory_uri();?>/images/logo/innove_logo.svg" alt="Innove logo">
+							</a>
+						</div>
+					</div>
 				</div>
-				<div class="col-sm">
-					<img src="" alt="" >
+			</div>
+
+
+			<!-- Contact in footer -->
+			<div class="row nm-footer__contact">
+				<div class="col-md">
+						SA Innove, Lõõtsa 4, 11415 Tallinn
+				</div>
+				<div class="col-md">
+					<a href="mailto:noor.meister@innove.ee" target="_blank">noor.meister@innove.ee</a>
+				</div>
+				<div class="col-md">
+					Telefon: <a href="tel:+3727350737" target="_blank">735&nbsp;0737</a>
 				</div>
 
 			</div>
+
 
 		</footer>
 
@@ -58,7 +92,7 @@
 			    {
 			    	loop:true,
 			    	autoplay:true,
-			    	autoplayTimeout:2000,
+			    	autoplayTimeout:3000,
 				    margin:10,
 				    slideBy:3,
 				    responsiveClass:true,
@@ -72,7 +106,7 @@
 				            nav:false
 				        },
 				        1000:{
-				            items:8,
+				            items:6,
 				            nav:false,
 				            loop:true
 				        }
@@ -97,5 +131,8 @@
 		  })();
 
 		</script>
+
+		<?php wp_footer(); ?>
+
 </body>
 </html>

@@ -6,8 +6,44 @@
   box-shadow: 0 -5px 10px 0 rgba(0,0,0,0.2);
 }
 
+.nm-fp__body {
+  .nm-footer__logobar {
+    margin-top: 0 !important;
+  }
+}
+
 footer {
-  //background: $nm-blackish;
-  background: hsla(222, 9%, 0%, 0.85);
+  background: $nm-blue;
+  // background: hsla(222, 9%, 0%, 0.9);
   min-height: 40vh;
+  color: $nm-white;
+  padding: 5vh 4vw;
+
+}
+
+.nm-footer__partner {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 220px;
+  padding: 3vh 0;
+}
+.nm-footer__heading {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-family: $nm-font;
+  letter-spacing: 0.15rem;
+  //text-align: left;
+  color: rgba(255,255,255,0.45);
+}
+.nm-footer__contact {
+  margin: 6vh 0 8vh 0;
+  padding-top: 6vh;
+  text-align: center;
+  // font-size: 0.9rem;
+  color: $nm-green;
+  border-top: 1px dotted rgba(255,255,255,0.15);
+  a {
+    color: $nm-green;
+  }
 }

@@ -55,7 +55,7 @@ h1, h2, h3, h4, h5 {
     top: 3.2rem;
     height: .5rem;
     z-index: -500;
-    //transform: rotate(-2.5deg);
+    // transform: rotate(1deg);
     margin-left: -5vw;
     background: $nm-blackish;
 
@@ -71,6 +71,6 @@ h1, h2, h3, h4, h5 {
 .nm-card {
   background: $nm-white;
   box-shadow: 0 1px 6px 1px rgba(0,0,0,0.3);
-  padding: 3vmin;
+  padding: 5vmin;
   margin-bottom: 4vh;
 }

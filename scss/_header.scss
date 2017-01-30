@@ -14,7 +14,7 @@
       line-height: 1;
       color:$nm-green;
       text-align: right;
-      font-size: 6.5vw;
+      font-size: 6vw;
     }
   }
   .nm-headerTop__nav {
@@ -24,6 +24,38 @@
         background: $nm-blue;
       }
     }
+
+
+    &--active {
+      position: fixed;
+      top:0;
+      left: 0;
+      margin:0;
+      display: flex;
+      height: 100vh;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      background: $nm-blue;
+
+      .menu-header-menu-container {
+        ul {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          margin:0;
+
+          li {
+            margin: 2vh 0;
+            text-align: center;
+            &.current-menu-item {
+              transform: rotate(2deg) translateY(0);
+            }
+          }
+        }
+      }
+    }
+
   }
   .current-menu-item {
     transform: rotate(3deg) translateY(10px);
@@ -38,14 +70,25 @@
   }
 }
 
+/*@media screen and (min-width: 600px) {
+  .nm-headerTop {
+    .nm-headerTop__logo {
+      .nm-headerTop__date {
+        font-size: 3.2vw;
+      }
+    }
+  }
+}*/
+
 @media screen and (min-width: 992px) {
   .nm-headerTop {
+    min-height: 10vh;
     .container {
       min-width: 0;
     }
     .nm-headerTop__logo {
       .nm-headerTop__date {
-        font-size: 4vw;
+        font-size: 3vw;
       }
     }
     .nm-headerTop__nav {
@@ -58,7 +101,7 @@
   .nm-headerTop {
     .nm-headerTop__logo {
       .nm-headerTop__date {
-        font-size: 3rem;
+        font-size: 2.6rem;
       }
     }
   }
@@ -93,21 +136,231 @@
   }
 }
 
-
-.nm-fpIntro {
+.nm-navSwapper {
+  position: fixed;
+  bottom: 3vh;
+  right: 3vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height:90vh;
+  width: 80px;
+  height: 80px;
+  background: $nm-orange;
+  border: 5px solid darken($nm-orange, 10%);
+  border-radius: 50%;
+  box-shadow: 0 2px 2px 1px rgba(0,0,0,0.4);
+  z-index: 99999;
+
+  transition: all 0.5s ease;
+
+  &:hover {
+    background: darken($nm-orange, 10%);
+    border: 5px solid lighten($nm-orange, 5%);
+    box-shadow: 0 7px 6px 3px rgba(0,0,0,0.4);
+  }
+
+  svg {
+    width: 50%;
+    height: auto;
+  }
+
+
+
+}
+
+.nm-fpIntro {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10vh 4vw;
   background: $nm-green;
+  text-align: center;
+  //height:92vh;
+
   overflow: hidden;
 
-  h1 {
-    font-size: 4.5rem;
+  .nm-fpIntro__logo {
+    //position: absolute;
+    width: 60vw;
+    margin: 0 auto 10vh auto;
+    transform: rotate(-5deg);
+    // opacity: 0.8;
   }
+  .nm-fpIntro__texts {
+    h2 {
+      color: $nm-white;
+      font-size: 3rem;
+      text-shadow: 3px 4px 0 $nm-blackish;
+    }
+    h5 {
+      font-family: $nm-font;
+      font-weight: 700;
+    }
+  }
+  .nm-fpIntro__when {
+    transform: rotate(2deg);
+    h2 {
+      color: $nm-orange;
+    }
+  }
+  .nm-fpIntro__what {
+    transform: rotate(-2.5deg);
+  }
+  hr {
+    margin: 4vh auto;
+    border-top: 5px solid rgba(255,255,255,0.6);
+    transform: rotate(-1deg);
+    &:last-of-type {
+      transform: rotate(1deg);
+    }
+  }
+
+  .nm-fpIntro__btn {
+    font-family: $nm-font--stencil;
+    margin-top: 2vh;
+    font-size: 2rem;
+    background: $nm-blackish;
+    color: $nm-orange;
+    border: none;
+    transform: rotate(2deg);
+  }
+}
+
+.nm-fpIntro__bg {
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 200vh;
+  background: $nm-green;
+  z-index:-15;
   img {
-    height: 100vh;
-    transform: rotate(-10deg);
-    opacity: 0.3;
+    position: absolute;
+    width: 200px;
+    bottom: 0;
   }
+}
+
+@media screen and (min-width: 992px) {
+  .nm-navSwapper {
+    display: none;
+  }
+
+  .nm-fpIntro {
+    flex-direction: row;
+    align-items: stretch;
+    min-height: 90vh;
+    flex-wrap: wrap;
+    background: hsla(83, 49%, 49%, 0);
+
+    .nm-fpIntro__logo {
+      flex: 1 0 40%;
+      display: flex;
+      align-items: center;
+      opacity: 1;
+      margin: 0;
+      transform: rotate(-3deg);
+      transform-style: preserve-3d;
+      perspective: 500px;
+      //animation: moveOrigin infinite 6s;
+
+      img {
+        width: 100%;
+        max-height: 75vh;
+        opacity: 0;
+
+        -webkit-transform: scale(1.0) scaleZ(1.0) rotateX(0deg);
+        -webkit-transform-origin: 50% 50%;
+        -webkit-perspective-origin: 50% 50%;
+        -moz-transform: rotateX(0deg);
+        -moz-transform-origin: 50% 50%;
+        -moz-perspective-origin: 50% 50%;
+        -ms-transform: rotateX(0deg);
+        -ms-transform-origin: 5% 50%;
+        -ms-perspective-origin: 50% 50%;
+
+        transform: scale(1.0) scaleZ(1.0) rotateX(40deg);
+        transform-origin: 50% 50%;
+        perspective-origin: 50% 50%;
+        animation: logoIn 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards;
+        animation-delay: 1s;
+        //margin: -8vh 0 0 -4vw;
+      }
+    }
+
+    .nm-fpIntro__texts {
+      flex: 1 0 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 0 3vw;
+
+    }
+
+    .nm-fpIntro__when {
+      transform: rotate(1.5deg);
+      text-align: right;
+      opacity: 0;
+      animation: whenIn 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards;
+      animation-delay: 2s;
+
+    }
+    .nm-fpIntro__what {
+      transform: rotate(-1deg);
+      text-align: right;
+      opacity: 0;
+      animation: whatIn 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards;
+      animation-delay: 2.7s;
+    }
+    .nm-fpIntro__btn {
+      font-family: $nm-font--stencil;
+      flex: 0;
+      transform: rotate(2deg);
+      transition: all 0.5s ease;
+      margin-top: 4vh;
+      &:hover {
+        color: $nm-white;
+        padding: 2rem;
+      }
+    }
+    hr {
+      display: none;
+    }
+
+  }
+}
+
+@keyframes logoIn {
+  0% {
+    opacity: 0;
+    transform: scaleZ(4) rotateX(-10deg) rotateY(70deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleZ(1) rotateX(-15deg) rotateY(10deg);
+  }
+}
+
+@keyframes whenIn {
+  0% {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes whatIn {
+  0% {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+
 }
