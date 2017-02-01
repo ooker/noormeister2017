@@ -3,7 +3,8 @@
 	<head>
 		<meta charset="utf-8" />
 		<title><?php bloginfo('name');?></title>
-		<meta name="google-site-verification" content="77raGIaSvZucOR4VaSrXlTJI1341fzonVVUCQx8KtWI" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- <meta name="google-site-verification" content="77raGIaSvZucOR4VaSrXlTJI1341fzonVVUCQx8KtWI" /> -->
 		<link rel="sitemap" href="sitemap.xml" type="application/xml" />
 		<link rel="shortcut icon" href="/favicon.ico" />
 
@@ -72,7 +73,9 @@
 			<div class="container">
 				<div class="row nm-headerTop__logo align-items-center" <?php if(is_front_page()) echo 'style="display:none;"'; ?> >
 					<div class="col-4 col-sm-3 col-lg-2">
-						<a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/nm-logo-17_neg_alternative.svg" alt="Noor Meister logo" /></a>
+						<a href="<?php echo home_url(); ?>">
+							<img class="nm-headerTop__logo__img" src="<?php echo get_template_directory_uri(); ?>/images/nm-logo-17_neg_alternative.svg" alt="Noor Meister 2017" />
+						</a>
 					</div>
 					<div class="col-8 col-sm-9 col-lg-10">
 						<h4 class="nm-headerTop__date">4.-5. mail Tallinnas</h4>
@@ -102,7 +105,7 @@
 			<section class="nm-fpIntro">
 
 			<div class="nm-fpIntro__logo">
-				<img src="<?php echo get_template_directory_uri(); ?>/images/nm-logo-2017.svg" />
+				<img src="<?php echo get_template_directory_uri(); ?>/images/nm-logo-2017.svg" alt="Noor Meister 2017" />
 			</div>
 
 			<div class="nm-fpIntro__texts">
@@ -116,10 +119,10 @@
 
 				<div class="nm-fpIntro__what">
 					<h2>Mis toimub?</h2>
-					<h5><b>Kutsemeistrivõistlused 25 alal</b>&mdash;võistlejaid üle 300</h5>
-					<h5><b>10 töötuba</b> erinevate ametite proovimiseks</h5>
-					<h5><b>Kutseharidusmess</b>&mdash;kõik oluline kutseharidusest</h5>
-					<h5>Laval <b>meelelahutusprogramm</b></h5>
+					<h5><b>KUTSE&shy;MEISTRI&shy;VÕISTLUSED:<br />32 eriala ja üle 400 võistleja</h5>
+					<h5><b>KUTSEHARIDUSMESS:</b><br />kõik oluline kutseharidusest ja <b>põnevad töötoad</b></h5>
+					<h5>Huvitav <b>LAVAPROGRAMM</b></h5>
+					<h5><b>Esineb Karl Erik Taukar Band</b></h5>
 					<hr style="width: 100%"/>
 					<a href="/kava" class="btn btn-primary btn-lg nm-fpIntro__btn">VAATA JÄRGI</a>
 				</div>

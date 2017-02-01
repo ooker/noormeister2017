@@ -1,0 +1,76 @@
+
+.nm-modalContent {
+  padding: 3vh 3vw;
+}
+.nm-modalHeader {}
+.nm-modalTitle {}
+.nm-modalClose {
+  position: fixed;
+  top: 1vw;
+  right: 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.2rem; height: 3.2rem;
+  background: $nm-blackish !important;
+  border-radius: 50%;
+  opacity: 1;
+  z-index: 20000;
+  transform: rotate(0deg);
+
+  transition: all 0.5s ease;
+
+  span {
+    color: $nm-white;
+    font-size: 2rem;
+    line-height: 0;
+    text-shadow: none;
+  }
+
+  &:hover {
+    opacity: 1;
+    //background: $nm-blue !important;
+    transform: rotate(90deg);
+    span {
+      color: $nm-orange;
+    }
+  }
+}
+.nm-modalBody {}
+.nm-modalFooter {}
+
+.nm-modal__btnNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  margin: 0;
+
+  border-radius: 50%;
+  top: 48vh;
+  font-size: 2rem;
+  line-height: 1;
+
+  background: $nm-blackish;
+  color: $nm-white;
+  cursor: pointer;
+}
+
+.nm-modal__btnPrev {
+  left: 3vw;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: translateX(-8px);
+  }
+}
+.nm-modal__btnNext {
+  right: 3vw;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: translateX(8px);
+  }
+}

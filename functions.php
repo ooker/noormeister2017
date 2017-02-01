@@ -96,3 +96,29 @@ function cc_mime_types($mimes) {
   return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
+
+/* emojis go away */
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
+
+/* prev/next buttons */
+function get_pagination_in_json( $post_response, $post, $context ) {
+
+    $post = get_post($post['ID']);
+
+    $previous_post = get_adjacent_post( true, '', true, 'tootuba' );
+    $next_post = get_adjacent_post( true, '', false, 'tootuba' );
+
+    if ( is_a( $previous_post, 'WP_Post' ) ) {
+        $previous = get_permalink($previous_post->ID);
+        $post_response['pagination']['previous'] = $previous;
+    }
+
+    if ( is_a( $next_post, 'WP_Post' ) ) {
+        $next = get_permalink($next_post->ID);
+        $post_response['pagination']['next'] = $next;
+    }
+
+    return $post_response;
+}
+add_filter( 'json_prepare_post', 'get_pagination_in_json', 10, 3 );

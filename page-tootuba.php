@@ -50,7 +50,7 @@ Template Post Type: page, tootuba, kutsevoistlus
             $args = array( 'post_type' => 'tootuba', 'posts_per_page' => 10 );
             $loop = new WP_Query( $args );
             while ( $loop->have_posts() ) : $loop->the_post();
-                echo '<a href="#" data-id="' . get_the_ID() . '" data-modal-type="tootuba" class="nm-modal-opener nm-picto">';
+                echo '<a href="#" data-id="' . get_the_ID() . '" data-modal-type="tootuba" class="nm-modal-opener nm-picto nm-rest__listItem">';
                 echo '<img src="' . get_the_post_thumbnail_url() . '">';
                 echo '<h5 class="nm-picto__text">' . get_the_title() . '</h5>';
               echo '</a>';

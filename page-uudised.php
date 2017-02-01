@@ -12,12 +12,12 @@
 							$args = array( 'post_type' => 'uudis' );
 							$recent_posts = wp_get_recent_posts( $args );
 							foreach( $recent_posts as $recent ){
-								echo '<div class="nm-newsExcerpt nm-card">';
+								echo '<a href="#" class="nm-newsExcerpt nm-card nm-modal-opener nm-rest__listItem" data-id="' . $recent["ID"] . '" data-modal-type="uudis">';
 									echo '<div class="nm-newsExcerpt__date"><i>' . get_the_date( "d.m.Y", $recent["ID"] ) . '</i></div>';
-									echo '<a href="#" data-id="' . $recent["ID"] . '" data-modal-type="uudis"  class="nm-newsExcerpt__title nm-modal-opener"><h3>' . $recent["post_title"].'</h3></a>';
-									echo '<p class="nm-newsExcerpt__content">' . $recent["post_excerpt"] . '</p>';
+									echo '<h4>' . $recent["post_title"].'</h4>';
+									echo '<p class="nm-newsExcerpt__content">' . $recent["post_excerpt"] . ' <i> [loe edasi...] </i></p>';
 									// echo '<a href="' . get_permalink($recent["ID"]) . '" class="btn btn-primary btn-sm nm-newsExcerpt__btn">Loe edasi</a>';
-								echo '</div>';
+								echo '</a>';
 							}
 							wp_reset_query();
 					?>

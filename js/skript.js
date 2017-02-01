@@ -1,10 +1,12 @@
-
+/*
+  Watch for media query change when mobile menu is open and user resizes
+  the browser from md to lg we hide the mobile menu.
+*/
 function initMediaQueryChanges(){
   var mql = window.matchMedia("(min-width: 992px)");
   mql.addListener(handleMediaChange);
   handleMediaChange(mql);
 }
-
 function handleMediaChange(mediaQueryList) {
   if (mediaQueryList.matches) {
     if( $(".nm-headerTop__nav").hasClass("nm-headerTop__nav--active") ){
@@ -13,19 +15,52 @@ function handleMediaChange(mediaQueryList) {
   }
 }
 
+
+/*
+  Bootstrap modals that display content through the WP REST API
+  Since author of this theme is a total REST API noob, the previous/next
+  navigation should probably be solved more eloquently.
+  Right now it's a hack.
+*/
 function initModals(){
   $(".nm-modal-opener").on("click", function(e){
     e.preventDefault();
     $('#myModal').modal('toggle');
     var type = $(this).data("modal-type");
     var id = $(this).data("id");
-    getModalContent(type, id);
+    var index = $(this).index();
+    getModalContent(type, id, index);
   });
 
   $('#myModal').on('hidden.bs.modal', function (e) {
-    // $(this).find(".modal-body").html("See on sisu");
     $( '.modal-title' ).html( "<i>Üks moment</i>" );
     $( '.modal-body' ).html( "<i>laen inffi...</i>" );
+  });
+
+  $(".nm-modal__btnNext").on("click", function(e){
+    $(this).prop("disabled", true);
+    var nextIndex;
+    if(parseInt( $('.nm-modalFooter').data("callerindex") ) < $(".nm-rest__listItem").length-1){
+      nextIndex = parseInt( $('.nm-modalFooter').data("callerindex") ) + 1;
+    } else {
+      nextIndex = 0;
+    }
+    var nextPostId = $('.nm-rest__listItem').eq(nextIndex).data("id");
+    var nextPostType = $('.nm-rest__listItem').eq(nextIndex).data("modal-type");
+    getModalContent(nextPostType, nextPostId, nextIndex);
+  });
+  $(".nm-modal__btnPrev").on("click", function(e){
+    $(this).prop("disabled", true);
+    var nextIndex;
+    if(parseInt( $('.nm-modalFooter').data("callerindex") ) > 0){
+      nextIndex = parseInt( $('.nm-modalFooter').data("callerindex") ) - 1;
+    } else {
+      nextIndex = $(".nm-rest__listItem").length-1;
+    }
+    //var nextIndex = parseInt( $('.nm-modalFooter').data("callerindex") ) - 1;
+    var nextPostId = $('.nm-rest__listItem').eq(nextIndex).data("id");
+    var nextPostType = $('.nm-rest__listItem').eq(nextIndex).data("modal-type");
+    getModalContent(nextPostType, nextPostId, nextIndex);
   });
 }
 
@@ -38,18 +73,35 @@ function initResponsiveNav(){
   });
 }
 
-function getModalContent(type, id) {
+function getModalContent(type, id, index) {
   var postUrl = "/wp-json/wp/v2/"+type+"/"+id;
   $.ajax( {
     url: postUrl,
-      success: function ( data ) {
+      success: function ( restData ) {
         // var post = data.shift();
         // $( '#quote-title' ).text( post.title );
-        $( '.modal-body' ).html( data.content.rendered );
-        $( '.modal-title' ).html( data.title.rendered );
-        console.log(data.title.rendered);
+        $( '.nm-modalFooter' ).data("callerindex", index);
+        $( '.modal-body' ).html( restData.content.rendered );
+        $( '.modal-title' ).html( restData.title.rendered );
+        //console.log(restData);
+        $('.nm-modal__btnPrev').prop("disabled", false);
+        $('.nm-modal__btnNext').prop("disabled", false);
+        /*
+        if(index > 0){
+          $('.nm-modal__btnPrev').prop("disabled", false);
+          $('.nm-modal__btnPrev').css({"visibility":"visible"});
+        } else {
+          $('.nm-modal__btnPrev').css({"visibility":"hidden"});
+        }
+        if(  ){
+          $('.nm-modal__btnNext').prop("disabled", false);
+          $('.nm-modal__btnNext').css({"visibility":"visible"});
+        } else {
+          $('.nm-modal__btnNext').css({"visibility":"hidden"});
+        }
+        */
       },
-      cache: false
+      cache: true
     } );
 }
 
