@@ -39,7 +39,7 @@
 					?>
 					</div>
 
-					<a href="#" class="btn btn-primary btn-lg">KÕIK UUDISED</a>
+					<a href="#" class="btn btn-primary btn-lg nm-news__btnArchive">KÕIK UUDISED </a>
 
 				</div>
 
