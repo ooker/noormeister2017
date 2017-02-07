@@ -28,26 +28,31 @@
 		<!-- FOOTER -->
 		<footer id="footer" class="container-fluid">
 			<div class="row align-items-center">
-				<div class="col-md-8" style="border-right: 1px dotted rgba(255,255,255,0.25)">
+				<div class="col-md-12" style="border-right: 1px dotted rgba(255,255,255,0.25)">
 
-					<div class="row">
+					<div class="row align-items-center">
 						<div class="col-sm-12" >
 							<h5 class="nm-footer__heading">Korraldajad:</h5>
 						</div>
-						<div class="col-sm-6">
+						<div class="col-sm-4">
 							<a href="http://www.innove.ee" target="_blank" class="nm-footer__partner">
-								<img class="nm-footer__logo__big" src="<?php echo get_template_directory_uri();?>/images/logo/innove_logo.svg" alt="Innove logo">
+								<img class="nm-footer__logo__big" src="<?php echo get_template_directory_uri();?>/images/logo/innove_kutseharidus_logo.svg" alt="Innove logo">
 							</a>
 						</div>
-						<div class="col-sm-6">
+						<div class="col-sm-4">
 							<a href="https://htm.ee/et" target="_blank" class="nm-footer__partner">
-								<img class="nm-footer__logo__big" src="<?php echo get_template_directory_uri();?>/images/logo/hm_logo.svg" alt="Haridus- ja teadusministeeriumi logo" style="margin-top:-15px;">
+								<img class="nm-footer__logo__big" src="<?php echo get_template_directory_uri();?>/images/logo/hm_logo.svg" alt="Haridus- ja teadusministeeriumi logo">
+							</a>
+						</div>
+						<div class="col-sm-4">
+							<a href="http://ec.europa.eu/esf/home.jsp?langId=et" target="_blank" class="nm-footer__partner">
+								<img class="nm-footer__logo__big" src="<?php echo get_template_directory_uri();?>/images/logo/esf_logo.svg" alt="Euroopa Sotsiaalfondi logo">
 							</a>
 						</div>
 					</div>
 
 				</div>
-				<div class="col-md-4">
+				<!--<div class="col-md-4">
 					<div class="row">
 						<div class="col-sm-12">
 							<h5 class="nm-footer__heading">Suursponsor:</h5>
@@ -58,7 +63,7 @@
 							</a>
 						</div>
 					</div>
-				</div>
+				</div>-->
 			</div>
 
 
@@ -71,7 +76,7 @@
 					<a href="mailto:noor.meister@innove.ee" target="_blank">noor.meister@innove.ee</a>
 				</div>
 				<div class="col-md">
-					Telefon: <a href="tel:+3727350737" target="_blank">735&nbsp;0737</a>
+					Telefon: <a href="tel:+3727350716" target="_blank">735&nbsp;0716</a>
 				</div>
 
 			</div>
@@ -92,21 +97,26 @@
 			    {
 			    	loop:true,
 			    	autoplay:true,
-			    	autoplayTimeout:3000,
-				    margin:10,
-				    slideBy:3,
+			    	autoplayTimeout:4000,
+				    margin:30,
+				    slideBy:4,
 				    responsiveClass:true,
 						responsive:{
 				        0:{
-				            items:2,
+				            items:3,
 				            nav:false
 				        },
 				        600:{
-				            items:4,
+				            items:5,
 				            nav:false
 				        },
 				        1000:{
-				            items:6,
+				            items:8,
+				            nav:false,
+				            loop:true
+				        },
+								1900:{
+				            items:10,
 				            nav:false,
 				            loop:true
 				        }

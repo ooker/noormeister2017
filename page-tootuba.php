@@ -1,7 +1,7 @@
 <?php
 /*
-Template Name: Töötoad-Kutsevõistlused Template
-Template Post Type: page, tootuba, kutsevoistlus
+Template Name: Töötoad Template
+Template Post Type: page, tootuba
 */
 ?>
 
@@ -60,17 +60,6 @@ Template Post Type: page, tootuba, kutsevoistlus
 
             <!-- End Loop -->
 
-          <!--<?php
-						$args = array( 'post_type' => 'tootuba' );
-						$recent_posts = wp_get_recent_posts( $args );
-						foreach( $recent_posts as $recent ){
-							echo '<a href="#" data-id="' . $recent["ID"] . '" data-modal-type="tootuba" class="nm-modal-opener">';
-                echo '<img src="' .  $recent["post_thumbnail"] . '">';
-                echo '<p class="">' . $recent["post_title"] . '</p>';
-              echo '</a>';
-						}
-						wp_reset_query();
-					?>-->
 					</div>
 				</div>
 

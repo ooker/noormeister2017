@@ -9,7 +9,7 @@
 					<div class="nm-cards">
 
 					<?php
-							$args = array( 'post_type' => 'uudis' );
+							$args = array( 'post_type' => 'uudis', 'numberposts' => 4 );
 							$recent_posts = wp_get_recent_posts( $args );
 							foreach( $recent_posts as $recent ){
 								echo '<a href="#" class="nm-newsExcerpt nm-card nm-modal-opener nm-rest__listItem" data-id="' . $recent["ID"] . '" data-modal-type="uudis">';

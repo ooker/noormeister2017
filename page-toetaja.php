@@ -1,9 +1,10 @@
 <?php
 /*
-Template Name: Kutsevõistlused Template
-Template Post Type: page, kutsevoistlus
+Template Name: Toetajad Template
+Template Post Type: page, toetaja
 */
 ?>
+
 
 <?php get_header() ?>
 
@@ -21,29 +22,30 @@ Template Post Type: page, kutsevoistlus
 					<?php endwhile; // end of the loop. ?>
 
 
-					<div class="nm-pictos">
+
+					<div class="nm-supporters">
 
 
-            <!-- The Loop -->
+          <!-- The Loop -->
           <?php
-            $args = array( 'post_type' => 'kutsevoistlus', 'posts_per_page' => 40 );
+            $args = array( 'post_type' => 'toetaja' );
             $loop = new WP_Query( $args );
             while ( $loop->have_posts() ) : $loop->the_post();
-                echo '<a href="#" data-id="' . get_the_ID() . '" data-modal-type="kutsevoistlus" class="nm-modal-opener nm-picto nm-rest__listItem">';
+                echo '<a href="' . get_post_meta(get_the_ID(), 'Toetaja_URL', true) . '" class="nm-card nm-supporter" target="_blank">';
                 echo '<img src="' . get_the_post_thumbnail_url() . '">';
-                echo '<h5 class="nm-picto__text">' . get_the_title() . '</h5>';
+                echo '<hr>';
+                echo '<div class="nm-supporter__text">' . get_the_title() . '</div>';
               echo '</a>';
             endwhile;
 
             ?>
 
             <!-- End Loop -->
-				  </div>
+
+					</div>
 				</div>
 
 			</section>
 		</div><!-- /.container -->
 
 <?php get_footer() ?>
-
-<?php include_once( dirname(__FILE__) . '/inc/modal.php'); ?>
