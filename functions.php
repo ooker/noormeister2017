@@ -6,13 +6,21 @@ function register_my_menus() {
 }
 add_action( 'init', 'register_my_menus' );
 
-
+/*
 register_sidebar(array(
     'name' => 'Footer',
     'before_widget' => '<li>',
     'after_widget' => '</li>',
     'before_title' => '<h6>',
     'after_title' => '</h6>',
+));
+*/
+register_sidebar(array(
+    'name' => 'Uudiste arhiiv',
+    'before_widget' => '<div>',
+    'after_widget' => '</div>',
+    'before_title' => '<h5>',
+    'after_title' => '</h5>',
 ));
 
 $defaults = array(
@@ -35,8 +43,8 @@ add_theme_support( 'custom-header', $defaults );
 // Register widgetized areas
 
 function theme_widgets_init() {
-    // Area 1
-    register_sidebar( array (
+  // Area 1
+  register_sidebar( array (
     'name' => 'Logod',
     'id' => 'logo_widget_area',
   ) );
@@ -44,26 +52,30 @@ function theme_widgets_init() {
 
 add_action( 'init', 'theme_widgets_init' );
 
-$header_img = array(
+/*$header_img = array(
   'flex-width'    => true,
   'width'         => 1284,
   'flex-height'    => true,
   'height'        => 494,
   'default-image' => get_template_directory_uri() . '/images/header_bg_14.png',
 );
-add_theme_support( 'custom-header', $header_img );
+add_theme_support( 'custom-header', $header_img );*/
 
 add_theme_support( 'post-thumbnails' );
 
+
+
+
+
+
 /*
-  Setting up Column shortcodes plugin for our theme
+  Setting up Column shortcodes plugin for nm17 theme
 */
 // hiding custom padding
 add_filter( 'cpsh_hide_padding_settings', '__return_true' );
 
 // hiding unnecessary column sets
 function hide_column_shortcodes( $shortcodes ) {
-    /* uncomment ( remove the '//' ) any of the following to remove it's shortcode from menu */
     unset( $shortcodes['full_width'] );
     // unset( $shortcodes['one_half'] );
     unset( $shortcodes['one_third'] );
@@ -76,12 +88,11 @@ function hide_column_shortcodes( $shortcodes ) {
     unset( $shortcodes['four_fifth'] );
     unset( $shortcodes['one_sixth'] );
     unset( $shortcodes['five_sixth'] );
-
     return $shortcodes;
 }
 add_filter( 'cpsh_column_shortcodes', 'hide_column_shortcodes' );
 
-// prevent loading the default styles (will replaced with flexbox)
+// prevent loading the default styles (want to replace floats with flexbox)
 add_filter( 'cpsh_load_styles', '__return_false' );
 
 
@@ -97,12 +108,24 @@ function cc_mime_types($mimes) {
 }
 add_filter('upload_mimes', 'cc_mime_types');
 
-/* emojis go away */
+/* emojis have to go away */
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
 
+// Show posts of 'post', and 'news' post types on archive page
+
+
+function add_my_post_types_to_query( $query ) {
+  if ( is_archive() && $query->is_main_query() ){
+    $query->set( 'post_type', array( 'uudis' ) );
+    return $query;
+  }
+}
+add_action( 'pre_get_posts', 'add_my_post_types_to_query' );
+
+
 /* prev/next buttons */
-function get_pagination_in_json( $post_response, $post, $context ) {
+/*function get_pagination_in_json( $post_response, $post, $context ) {
 
     $post = get_post($post['ID']);
 
@@ -122,3 +145,19 @@ function get_pagination_in_json( $post_response, $post, $context ) {
     return $post_response;
 }
 add_filter( 'json_prepare_post', 'get_pagination_in_json', 10, 3 );
+*/
+
+
+/*
+function nm_custom_post_rewrite( $rewrite_rules ) {
+  $cpslug = 'uudis'; // custom post type slug
+  // Rule to display monthly archive -> contest_recipe/2012/08/
+  $year_archive = array( $cpslug . '/([0-9]{4})/([0-9]{1,2})/?$' => 'index.php?year=$matches[1]&monthnum=$matches[2]&post_type=' . $cpslug );
+  // Rule to display yearly archive -> contest_recipe/2012/
+  $month_archive = array( $cpslug . '/([0-9]{4})/?$' => 'index.php?year=$matches[1]&post_type=' . $cpslug );
+  $rewrite_rules = $year_archive + $month_archive + $rewrite_rules;
+  return $rewrite_rules;
+}
+add_filter('rewrite_rules_array', 'nm_custom_post_rewrite');
+*/
+?>
