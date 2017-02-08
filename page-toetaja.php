@@ -32,7 +32,7 @@ Template Post Type: page, toetaja
             $loop = new WP_Query( $args );
             while ( $loop->have_posts() ) : $loop->the_post();
                 echo '<a href="' . get_post_meta(get_the_ID(), 'Toetaja_URL', true) . '" class="nm-card nm-supporter" target="_blank">';
-                echo '<img src="' . get_the_post_thumbnail_url() . '">';
+                echo '<div class="nm-supporter__img"><img src="' . get_the_post_thumbnail_url() . '"></div>';
                 echo '<hr>';
                 echo '<div class="nm-supporter__text">' . get_the_title() . '</div>';
               echo '</a>';

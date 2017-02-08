@@ -120,7 +120,7 @@
 				            nav:false
 				        },
 				        1000:{
-				            items:8,
+				            items:10,
 				            nav:false,
 				            loop:true
 				        },

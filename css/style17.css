@@ -585,16 +585,9 @@ footer {
   transition: border-radius 0.3s ease; }
   .nm-supporter hr {
     width: 33%;
-    margin-bottom: 0.5rem;
+    margin: 0.2rem auto 0.5rem auto;
     border-top-color: rgba(128, 128, 128, 0.25);
     transition: all 0.5s ease; }
-  .nm-supporter img {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-width: 260px;
-    max-height: 150px;
-    margin: 0 auto; }
   .nm-supporter:hover {
     border-radius: 1rem;
     text-decoration: none;
@@ -603,7 +596,24 @@ footer {
       width: 100%;
       border-top-color: rgba(128, 128, 128, 0.4); }
 
+.nm-supporter__img {
+  -ms-flex: 1 0 70%;
+      flex: 1 0 70%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center; }
+  .nm-supporter__img img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 260px;
+    max-height: 150px;
+    margin: 0 auto; }
+
 .nm-supporter__text {
+  -ms-flex: 0 1 30%;
+      flex: 0 1 30%;
   font-size: 75%;
   text-transform: uppercase;
   text-align: center;
