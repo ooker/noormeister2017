@@ -69,6 +69,7 @@
 		</div>
 
 
+
 		<header class="container-fluid nm-headerTop" <?php if(is_front_page()) echo 'style="padding-top:0;"'; ?> >
 			<div class="container">
 				<div class="row nm-headerTop__logo align-items-center" <?php if(is_front_page()) echo 'style="display:none;"'; ?> >
@@ -119,7 +120,7 @@
 
 				<div class="nm-fpIntro__what">
 					<h2>Mis toimub?</h2>
-					<h5><b>KUTSE&shy;MEISTRI&shy;VÕISTLUSED:<br />32 eriala ja üle 400 võistleja</h5>
+					<h5><b>KUTSE&shy;MEISTRI&shy;VÕISTLUSED:</b><br />32 eriala ja üle 400 võistleja</h5>
 					<h5><b>KUTSEHARIDUSMESS:</b><br />kõik oluline kutseharidusest ja <b>põnevad töötoad</b></h5>
 					<h5>Huvitav <b>LAVAPROGRAMM</b></h5>
 					<h5><b>Esineb Karl Erik Taukar Band</b></h5>
@@ -128,7 +129,16 @@
 				</div>
 
 			</div>
+
+			<div class="nm-fpIntro__esf">
+				<img class="nm-fpIntro__esf--hor"
+					src="<?php echo get_template_directory_uri(); ?>/images/logo/esf_logo.svg" />
+				<img class="nm-fpIntro__esf--ver"
+					src="<?php echo get_template_directory_uri(); ?>/images/logo/esf_logo_ver.svg" />
+			</div>
+
 		</section>
+
 
 
 		<?php endif ?>
