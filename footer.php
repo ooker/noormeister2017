@@ -14,12 +14,21 @@
 			-->
 			<div id="carousel_container" class="owl-carousel" >
 				<?php
-					$handle = opendir(dirname(realpath(__FILE__)).'/logos/');
+
+				$args = array( 'post_type' => 'toetaja' );
+				$loop = new WP_Query( $args );
+				while ( $loop->have_posts() ) : $loop->the_post();
+						echo '<img class="item" src="' . get_the_post_thumbnail_url() . '" alt="'. get_the_title() .'">';
+				endwhile;
+
+
+
+					/*$handle = opendir(dirname(realpath(__FILE__)).'/logos/');
 					while($file = readdir($handle)){
 						if($file !== '.' && $file !== '..'){
 							echo '<img class="item" src="'.get_template_directory_uri().'/logos/'.$file.'" alt="" />';
 						}
-					}
+					}*/
 				?>
 			</div>
 		</section>
@@ -98,7 +107,7 @@
 			    	loop:true,
 			    	autoplay:true,
 			    	autoplayTimeout:4000,
-				    margin:30,
+				    margin:10,
 				    slideBy:4,
 				    responsiveClass:true,
 						responsive:{

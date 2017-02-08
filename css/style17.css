@@ -317,10 +317,16 @@ html {
 
 .nm-footer__logobar {
   margin-top: 5vh;
-  padding-top: 5vmin;
-  padding-bottom: 5vmin;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
   background: #fff;
   box-shadow: 0 -5px 10px 0 rgba(0, 0, 0, 0.2); }
+
+.owl-stage {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center; }
 
 .nm-fp__body .nm-footer__logobar {
   margin-top: 0 !important; }
@@ -557,14 +563,14 @@ footer {
   display: flex;
   -ms-flex-direction: row;
       flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -ms-flex-pack: center;
+      justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
 
 .nm-supporter {
-  -ms-flex: 0 1 25%;
-      flex: 0 1 25%;
+  -ms-flex: 0 1 20%;
+      flex: 0 1 20%;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -572,7 +578,8 @@ footer {
   -ms-flex-pack: center;
       justify-content: center;
   min-width: 200px;
-  padding: 1.5rem 2rem;
+  margin: 1rem 0.5rem;
+  padding: 0.5rem 2rem 1rem 2rem;
   border-radius: 0;
   color: #202227;
   transition: border-radius 0.3s ease; }
@@ -582,14 +589,16 @@ footer {
     border-top-color: rgba(128, 128, 128, 0.25);
     transition: all 0.5s ease; }
   .nm-supporter img {
-    width: auto;
+    display: block;
+    width: 100%;
     height: auto;
-    max-width: 200px;
-    max-height: 160px;
+    max-width: 260px;
+    max-height: 150px;
     margin: 0 auto; }
   .nm-supporter:hover {
     border-radius: 1rem;
-    text-decoration: none; }
+    text-decoration: none;
+    z-index: 400; }
     .nm-supporter:hover hr {
       width: 100%;
       border-top-color: rgba(128, 128, 128, 0.4); }

@@ -45,7 +45,7 @@ Template Post Type: page, tootuba
 					<div class="nm-pictos">
 
 
-            <!-- The Loop -->
+          <!-- The Loop -->
           <?php
             $args = array( 'post_type' => 'tootuba', 'posts_per_page' => 10 );
             $loop = new WP_Query( $args );
@@ -55,9 +55,7 @@ Template Post Type: page, tootuba
                 echo '<h5 class="nm-picto__text">' . get_the_title() . '</h5>';
               echo '</a>';
             endwhile;
-
             ?>
-
             <!-- End Loop -->
 
 					</div>

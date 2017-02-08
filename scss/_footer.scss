@@ -1,9 +1,14 @@
 .nm-footer__logobar {
   margin-top: 5vh;
-  padding-top: 5vmin;
-  padding-bottom: 5vmin;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
   background: $nm-white;
   box-shadow: 0 -5px 10px 0 rgba(0,0,0,0.2);
+}
+
+.owl-stage {
+  display: flex;
+  align-items: center;
 }
 
 .nm-fp__body {
