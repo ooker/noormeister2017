@@ -177,7 +177,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10vh 4vw;
+  padding: 100px 4vw 10vh 4vw ;
   background: $nm-green;
   text-align: center;
   //height:92vh;
@@ -187,7 +187,7 @@
   .nm-fpIntro__logo {
     //position: absolute;
     width: 60vw;
-    margin: 0 auto 10vh auto;
+    margin: 0 auto 8vh auto;
     transform: rotate(-5deg);
     // opacity: 0.8;
   }
@@ -234,18 +234,18 @@
     display: block;
     position: absolute;
     top: 0;
-    right: 0;
-    width: 80px;
-    height: auto;
-    .nm-fpIntro__esf--ver {
-      height: auto;
-      width: 100%;
-      //max-height: 160px;
-      box-shadow: -2px 2px 3px 1px rgba(0,0,0,0.3);
-    }
+    left: 0;
+    width: auto;
+    height: 80px;
     .nm-fpIntro__esf--hor {
-      display: none;
+      height: 100%;
+      width: auto;
+      //max-height: 160px;
+      box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.3);
     }
+    /*.nm-fpIntro__esf--hor {
+      display: none;
+    }*/
   }
 
 }
@@ -351,9 +351,9 @@
 
     .nm-fpIntro__esf {
       position: absolute;
-      top: auto;
+      top: 75vh;
       right: auto;
-      bottom: 35px;
+      //bottom: 35px;
       left: 47%;
       width: auto;
       height: 12vh;

@@ -157,13 +157,13 @@ html {
       justify-content: center;
   -ms-flex-align: center;
       align-items: center;
-  padding: 10vh 4vw;
+  padding: 100px 4vw 10vh 4vw;
   background: #8bba40;
   text-align: center;
   overflow: hidden; }
   .nm-fpIntro .nm-fpIntro__logo {
     width: 60vw;
-    margin: 0 auto 10vh auto;
+    margin: 0 auto 8vh auto;
     -ms-transform: rotate(-5deg);
         transform: rotate(-5deg); }
   .nm-fpIntro .nm-fpIntro__texts h2 {
@@ -202,15 +202,16 @@ html {
     display: block;
     position: absolute;
     top: 0;
-    right: 0;
-    width: 80px;
-    height: auto; }
-    .nm-fpIntro .nm-fpIntro__esf .nm-fpIntro__esf--ver {
-      height: auto;
-      width: 100%;
-      box-shadow: -2px 2px 3px 1px rgba(0, 0, 0, 0.3); }
+    left: 0;
+    width: auto;
+    height: 80px;
+    /*.nm-fpIntro__esf--hor {
+      display: none;
+    }*/ }
     .nm-fpIntro .nm-fpIntro__esf .nm-fpIntro__esf--hor {
-      display: none; }
+      height: 100%;
+      width: auto;
+      box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.3); }
 
 .nm-fpIntro__bg {
   position: absolute;
@@ -306,9 +307,8 @@ html {
         padding: 2rem; }
     .nm-fpIntro .nm-fpIntro__esf {
       position: absolute;
-      top: auto;
+      top: 75vh;
       right: auto;
-      bottom: 35px;
       left: 47%;
       width: auto;
       height: 12vh;

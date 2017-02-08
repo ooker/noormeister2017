@@ -133,8 +133,8 @@
 			<div class="nm-fpIntro__esf">
 				<img class="nm-fpIntro__esf--hor"
 					src="<?php echo get_template_directory_uri(); ?>/images/logo/esf_logo.svg" />
-				<img class="nm-fpIntro__esf--ver"
-					src="<?php echo get_template_directory_uri(); ?>/images/logo/esf_logo_ver.svg" />
+				<!--<img class="nm-fpIntro__esf--ver"
+					src="<?php //echo get_template_directory_uri(); ?>/images/logo/esf_logo_ver.svg" />-->
 			</div>
 
 		</section>
