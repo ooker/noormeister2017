@@ -1,0 +1,24 @@
+.nm-social {
+  position: absolute;
+  right: 1rem;
+  top: -0.75rem;
+  display: flex;
+  justify-content: space-between;
+  width: 120px;
+}
+.nm-social__icon {
+  flex: 0 1 25%;
+  border-bottom: 2px rgba(0,0,0,0) solid;
+  transition: border-bottom 0.3s ease;
+  img {
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    width: 100%;
+  }
+  &:hover {
+    border-bottom: 2px rgba(0,0,0,0.2) solid;
+    img {
+      transform: translateY(-4px);
+    }
+  }
+}

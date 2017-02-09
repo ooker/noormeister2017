@@ -5,6 +5,7 @@
 				<div class="col-sm-12">
 
 					<h1 class="nm-title">Uudised</h1>
+					<?php include_once( dirname(__FILE__) . '/inc/social.php'); ?>
 
 					<div class="nm-cards">
 

@@ -490,6 +490,32 @@ footer {
     -ms-transform: translateX(8px);
         transform: translateX(8px); }
 
+.nm-social {
+  position: absolute;
+  right: 1rem;
+  top: -0.75rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  width: 120px; }
+
+.nm-social__icon {
+  -ms-flex: 0 1 25%;
+      flex: 0 1 25%;
+  border-bottom: 2px transparent solid;
+  transition: border-bottom 0.3s ease; }
+  .nm-social__icon img {
+    -ms-transform: translateY(0);
+        transform: translateY(0);
+    transition: transform 0.3s ease;
+    width: 100%; }
+  .nm-social__icon:hover {
+    border-bottom: 2px rgba(0, 0, 0, 0.2) solid; }
+    .nm-social__icon:hover img {
+      -ms-transform: translateY(-4px);
+          transform: translateY(-4px); }
+
 .entry-content h4, .entry-content h5, .entry-content h6 {
   margin-bottom: 2rem;
   line-height: 1.3;
