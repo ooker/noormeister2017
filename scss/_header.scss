@@ -157,15 +157,34 @@
     width: 50%;
     height: auto;
   }
-
-
-
 }
 
 
 
 /* ---------------------------------------------------------------------------
-  fpIntro
+  pageBg - animated SVG background
+--------------------------------------------------------------------------- */
+
+
+
+
+.nm-pageBg {
+  backface-visibility: hidden;
+}
+.nm-pageBg__svg {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: -200;
+  backface-visibility: hidden;
+}
+
+
+
+
+
+/* ---------------------------------------------------------------------------
+  fpIntro - first page intro
 --------------------------------------------------------------------------- */
 
 
@@ -189,6 +208,7 @@
     width: 60vw;
     margin: 0 auto 8vh auto;
     transform: rotate(-5deg);
+    backface-visibility: hidden;
     // opacity: 0.8;
   }
   .nm-fpIntro__texts {

@@ -145,7 +145,22 @@ html {
     height: auto; }
 
 /* ---------------------------------------------------------------------------
-  fpIntro
+  pageBg - animated SVG background
+--------------------------------------------------------------------------- */
+.nm-pageBg {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden; }
+
+.nm-pageBg__svg {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: -200;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden; }
+
+/* ---------------------------------------------------------------------------
+  fpIntro - first page intro
 --------------------------------------------------------------------------- */
 .nm-fpIntro {
   display: -ms-flexbox;
@@ -165,7 +180,9 @@ html {
     width: 60vw;
     margin: 0 auto 8vh auto;
     -ms-transform: rotate(-5deg);
-        transform: rotate(-5deg); }
+        transform: rotate(-5deg);
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden; }
   .nm-fpIntro .nm-fpIntro__texts h2 {
     color: #fff;
     font-size: 3rem;
@@ -676,12 +693,6 @@ h1, h2, h3, h4, h5 {
   font-family: "Gunplay", sans-serif;
   font-weight: normal;
   color: #152647; }
-
-.nm-pageBg__svg {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  z-index: -200; }
 
 .nm-pageContent {
   padding-top: 4vh;
