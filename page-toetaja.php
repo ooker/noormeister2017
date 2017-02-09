@@ -15,6 +15,7 @@ Template Post Type: page, toetaja
           <?php while ( have_posts() ) : the_post(); ?>
 					<div id="post-<?php echo the_id()?>">
 						<h1 class="nm-title"><?php the_title() ?></h1>
+						<?php include_once( dirname(__FILE__) . '/inc/social.php'); ?>
 						<div class="entry-content">
 							<?php the_content() ?>
 						</div><!-- .entry-content -->
