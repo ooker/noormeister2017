@@ -76,6 +76,8 @@ h1, h2, h3, h4, h5 {
     margin: 0;
     line-height: 1;
     color: #8bba40;
+    font-family: "Gunplay", sans-serif;
+    font-weight: 400;
     text-align: right;
     font-size: 6vw; }
   .nm-headerTop .nm-headerTop__nav {
@@ -224,6 +226,8 @@ h1, h2, h3, h4, h5 {
             backface-visibility: hidden; }
   .nm-fpIntro .nm-fpIntro__texts h2 {
     color: #fff;
+    font-family: "Gunplay", sans-serif;
+    font-weight: 400;
     font-size: 3rem;
     text-shadow: 3px 4px 0 #202227; }
   .nm-fpIntro .nm-fpIntro__texts h5 {
@@ -634,8 +638,7 @@ footer {
 .nm-picto {
   -ms-flex: 0 1 25%;
       flex: 0 1 25%;
-  width: 25vw;
-  min-width: 200px;
+  min-width: 180px;
   max-width: 240px;
   display: -ms-flexbox;
   display: flex;
