@@ -1,35 +1,26 @@
-<?php /*
-get_header();
-echo '<h1>Booyaka</h1>';
-if(have_posts()) : while(have_posts()) : the_post();
-	the_title();
-	echo '<div class="entry-content">';
-
-	the_content();
-	echo '</div>';
-endwhile; endif;
-get_footer();
-*/
-?>
-
-
 <?php get_header() ?>
 
 		<div class="container nm-pageContent">
 			<section class="row" role="main">
 				<div class="col-sm-12">
 
-					<h1 class="nm-title">Kõik uudised</h1>
+					<h1 class="nm-title">Uudiste arhiiv</h1>
 					<?php include_once( dirname(__FILE__) . '/inc/social.php'); ?>
 
 					<div class="row nm-card">
 						<div class="col-md-8">
-							<?php if(have_posts()) : while(have_posts()) : the_post();
 
+							<?php
+								//$content = wpautop( $post->post_content );
+								//$content = apply_filters('the_content', $post->post_content);
+								if(have_posts()) : while(have_posts()) : the_post();
+
+								//$content = get_the_content();
 								echo '<div class="entry-content nm-newsArchive__item">';
+									echo '<div style="margin-bottom: 12px; text-align: right;"><i>' . get_the_date( "d.m.Y", $recent["ID"] ) . '</i></div>';
 									echo '<h3 class="nm-fancyHeading">'. get_the_title() . '</h3>';
 									echo '<div>'
-											. get_the_content() .
+											. wpautop( $post->post_content ) .
 									'</div>';
 									//the_content();
 								echo '</div><hr class="nm-newsDivider" />';
@@ -62,7 +53,28 @@ get_footer();
 							?>
 						</div>
 						<div class="col-md-4">
-							<?php get_sidebar('Uudiste arhiiv'); ?>
+							<div class="nm-newsArchive__sidebar">
+
+								<h4>Kuude kaupa</h4>
+
+							<?php
+								//get_sidebar('Uudiste arhiiv');
+								$args = array(
+									'type'            => 'monthly',
+									'limit'           => '',
+									'format'          => 'custom',
+									'before'          => '<div class="nm-newsArchive__sidebarItem">',
+									'after'           => '</div>',
+									'show_post_count' => false,
+									'echo'            => 1,
+									'order'           => 'DESC',
+								  'post_type'     => 'uudis'
+								);
+								wp_get_archives( $args );
+
+							?>
+
+							</div>
 						</div>
 
 					</div>

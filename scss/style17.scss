@@ -36,8 +36,6 @@ h1, h2, h3, h4, h5 {
   margin-left: -2vw;
   width: 100%;
 
-  //animation: nmTitleFrames 8s infinite alternate linear;
-
   &:before {
     content : "";
     position: absolute;
@@ -67,18 +65,22 @@ h1, h2, h3, h4, h5 {
 @import "page-supporters";
 
 .nm-fancyHeading {
+  position: relative;
   font-family: $nm-font--stencil;
   font-weight: 400;
-
+  padding-left: 36px;
   &:before {
     content: "";
     display: block;
-    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    //float: left;
     //background: $nm-white;
     width: 24px;
     height: 24px;
     //margin-left: -12px;
-    margin-right: 12px;
+    //margin-right: 12px;
     margin-bottom: 8px;
     vertical-align: baseline;
     border: 9px solid $nm-orange;

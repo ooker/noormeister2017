@@ -41,18 +41,32 @@
 
 
 .nm-newsDivider {
-  margin-bottom: 4vh;
+  margin-top: 3vh;
+  margin-bottom: 7vh;
 }
 
 .nm-newsArchive__item {
+
   h1, h2, h3 {
     font-family: $nm-font;
     font-weight: 700;
   }
 }
 
+.nm-newsArchive__sidebar {
+  text-align: right;
+}
+
+.nm-newsArchive__sidebarItem {
+  text-align: right;
+}
+
 @media (min-width: 992px){
   .nm-newsExcerpt {
     flex: 0 1 48.5%;
   }
+  .nm-newsArchive__sidebar {
+    padding-top: 8vh;
+  }
+
 }
