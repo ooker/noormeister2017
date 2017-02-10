@@ -9,6 +9,45 @@ html {
   font-family: 'Gunplay';
   src: url("font/gunplay.woff") format("woff"); }
 
+body {
+  position: relative;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font-family: "Lato", sans-serif; }
+
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  color: #152647; }
+
+.nm-pageContent {
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+  min-height: 60vh; }
+
+.nm-title {
+  position: relative;
+  font-size: 3rem;
+  margin: 3vh 0 10vh 0;
+  padding-bottom: 3vh;
+  font-family: "Gunplay", sans-serif;
+  font-weight: 400;
+  -ms-transform: rotate(-2.5deg);
+      transform: rotate(-2.5deg);
+  margin-left: -2vw;
+  width: 100%; }
+  .nm-title:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 84vw;
+    top: 3.2rem;
+    height: .5rem;
+    z-index: -500;
+    margin-left: -5vw;
+    background: #202227; }
+
 .nm-cards {
   display: -ms-flexbox;
   display: flex;
@@ -520,23 +559,49 @@ footer {
   top: 2rem;
   right: 7vw; }
 
-.entry-content h4, .entry-content h5, .entry-content h6 {
-  margin-bottom: 2rem;
-  line-height: 1.3;
-  font-family: "Lato", sans-serif;
-  font-weight: bold; }
+.nm-newsExcerpt {
+  -ms-flex: 1 0 100%;
+      flex: 1 0 100%;
+  color: #202227;
+  text-decoration: none;
+  box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 0;
+  transition: all 0.5s ease; }
+  .nm-newsExcerpt:hover {
+    text-decoration: none;
+    background: #f1e388;
+    box-shadow: 0 3px 5px 2px rgba(0, 0, 0, 0.2);
+    color: #202227;
+    border-radius: 20px; }
 
-.entry-content h1:before, .entry-content h2:before, .entry-content h3:before {
-  content: "";
-  display: block;
-  float: left;
-  width: 24px;
-  height: 24px;
-  margin-left: -12px;
-  vertical-align: baseline;
-  margin-right: 12px;
-  border: 9px solid #f4a825;
-  border-radius: 50%; }
+.nm-newsExcerpt__date {
+  margin-bottom: 0.5rem; }
+
+.nm-newsExcerpt__title {
+  text-decoration: none; }
+  .nm-newsExcerpt__title:hover {
+    text-decoration: none; }
+  .nm-newsExcerpt__title h2 {
+    margin: 0 0 0.5rem 0; }
+
+.nm-newsExcerpt__btn {
+  background: #8bba40;
+  color: #000; }
+
+.nm-newsDivider {
+  margin-bottom: 4vh; }
+
+.nm-newsArchive__item h1, .nm-newsArchive__item h2, .nm-newsArchive__item h3 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700; }
+
+@media (min-width: 992px) {
+  .nm-newsExcerpt {
+    -ms-flex: 0 1 48.5%;
+        flex: 0 1 48.5%; } }
+
+.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
+  margin-bottom: 1.5rem; }
 
 .nm-columnsContainer {
   display: -ms-flexbox;
@@ -616,40 +681,6 @@ footer {
   #wpgmza_map {
     border: 10px solid #7da739; } }
 
-.nm-newsExcerpt {
-  -ms-flex: 1 0 100%;
-      flex: 1 0 100%;
-  color: #202227;
-  text-decoration: none;
-  box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.5);
-  border-radius: 0;
-  transition: all 0.5s ease; }
-  .nm-newsExcerpt:hover {
-    text-decoration: none;
-    background: #f1e388;
-    box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.3);
-    color: #202227;
-    border-radius: 20px; }
-
-.nm-newsExcerpt__date {
-  margin-bottom: 0.5rem; }
-
-.nm-newsExcerpt__title {
-  text-decoration: none; }
-  .nm-newsExcerpt__title:hover {
-    text-decoration: none; }
-  .nm-newsExcerpt__title h2 {
-    margin: 0 0 0.5rem 0; }
-
-.nm-newsExcerpt__btn {
-  background: #8bba40;
-  color: #000; }
-
-@media (min-width: 992px) {
-  .nm-newsExcerpt {
-    -ms-flex: 0 1 48.5%;
-        flex: 0 1 48.5%; } }
-
 .nm-supporters {
   display: -ms-flexbox;
   display: flex;
@@ -711,40 +742,21 @@ footer {
   text-align: center;
   line-height: 1.2; }
 
-body {
-  position: relative;
-  font-size: 18px;
-  margin: 0;
-  padding: 0;
-  background: #fff;
-  font-family: "Lato", sans-serif; }
-
-h1, h2, h3, h4, h5 {
+.nm-fancyHeading {
   font-family: "Gunplay", sans-serif;
-  font-weight: normal;
-  color: #152647; }
-
-.nm-pageContent {
-  padding-top: 4vh;
-  padding-bottom: 4vh;
-  min-height: 60vh; }
-
-.nm-title {
-  position: relative;
-  font-size: 3rem;
-  margin: 3vh 0 10vh 0;
-  padding-bottom: 3vh;
-  -ms-transform: rotate(-2.5deg);
-      transform: rotate(-2.5deg);
-  margin-left: -2vw;
-  width: 100%; }
-  .nm-title:before {
+  font-weight: 400; }
+  .nm-fancyHeading:before {
     content: "";
-    position: absolute;
     display: block;
-    width: 84vw;
-    top: 3.2rem;
-    height: .5rem;
-    z-index: -500;
-    margin-left: -5vw;
-    background: #202227; }
+    float: left;
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    margin-bottom: 8px;
+    vertical-align: baseline;
+    border: 9px solid #f4a825;
+    border-radius: 50%; }
+
+.nm-font--stencil {
+  font-family: "Gunplay", sans-serif;
+  font-weight: normal; }

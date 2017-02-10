@@ -25,15 +25,28 @@ get_footer();
 					<div class="row nm-card">
 						<div class="col-md-8">
 							<?php if(have_posts()) : while(have_posts()) : the_post();
-								the_title();
-								echo '<div class="entry-content">';
 
-								the_content();
-								echo '</div>';
+								echo '<div class="entry-content nm-newsArchive__item">';
+									echo '<h3 class="nm-fancyHeading">'. get_the_title() . '</h3>';
+									echo '<div>'
+											. get_the_content() .
+									'</div>';
+									//the_content();
+								echo '</div><hr class="nm-newsDivider" />';
 							endwhile; endif;
 							?>
 
 							<?php
+							/*
+								$args = array( 'post_type' => 'tootuba', 'posts_per_page' => 10 );
+								$loop = new WP_Query( $args );
+								while ( $loop->have_posts() ) : $loop->the_post();
+										echo '<a href="#" data-id="' . get_the_ID() . '" data-modal-type="tootuba" class="nm-modal-opener nm-picto nm-rest__listItem">';
+										echo '<img src="' . get_the_post_thumbnail_url() . '">';
+										echo '<h5 class="nm-picto__text">' . get_the_title() . '</h5>';
+									echo '</a>';
+								endwhile;
+								*/
 							/*
 									$args = array( 'post_type' => 'uudis', 'numberposts' => 4 );
 									$recent_posts = wp_get_recent_posts( $args );

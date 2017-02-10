@@ -3,7 +3,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content nm-modalContent">
       <div class="modal-header nm-modalHeader">
-        <h3 class="modal-title nm-modalTitle" id="exampleModalLabel">Üks moment...</h3>
+        <h3 class="modal-title nm-modalTitle nm-font--stencil" id="exampleModalLabel">Üks moment...</h3>
         <button type="button" class="close nm-modalClose" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&#10006;</span>
         </button>

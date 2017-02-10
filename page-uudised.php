@@ -15,7 +15,7 @@
 							foreach( $recent_posts as $recent ){
 								echo '<a href="#" class="nm-newsExcerpt nm-card nm-modal-opener nm-rest__listItem" data-id="' . $recent["ID"] . '" data-modal-type="uudis">';
 									echo '<div class="nm-newsExcerpt__date"><i>' . get_the_date( "d.m.Y", $recent["ID"] ) . '</i></div>';
-									echo '<h4>' . $recent["post_title"].'</h4>';
+									echo '<h4 class="nm-font--stencil">' . $recent["post_title"].'</h4>';
 									echo '<p class="nm-newsExcerpt__content">' . $recent["post_excerpt"] . ' <i> [loe edasi...] </i></p>';
 									// echo '<a href="' . get_permalink($recent["ID"]) . '" class="btn btn-primary btn-sm nm-newsExcerpt__btn">Loe edasi</a>';
 								echo '</a>';

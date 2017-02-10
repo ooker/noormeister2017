@@ -1,14 +1,4 @@
 @import "setup";
-@import "components";
-@import "header";
-@import "footer";
-@import "modal";
-@import "social";
-
-
-@import "entry";
-@import "page-news";
-@import "page-supporters";
 
 
 body {
@@ -20,10 +10,13 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: $nm-font--stencil;
-  font-weight: normal;
+  //font-family: $nm-font--stencil;
+  //font-weight: normal;
+  font-weight: 700;
   color: $nm-blue;
 }
+
+
 
 .nm-pageContent {
   padding-top: 4vh;
@@ -36,7 +29,8 @@ h1, h2, h3, h4, h5 {
   font-size: 3rem;
   margin: 3vh 0 10vh 0;
   padding-bottom: 3vh;
-
+  font-family: $nm-font--stencil;
+  font-weight: 400;
   //overflow: hidden;
   transform: rotate(-2.5deg);
   margin-left: -2vw;
@@ -59,4 +53,40 @@ h1, h2, h3, h4, h5 {
 
   }
 
+}
+
+@import "components";
+@import "header";
+@import "footer";
+@import "modal";
+@import "social";
+
+@import "page-news";
+@import "entry";
+
+@import "page-supporters";
+
+.nm-fancyHeading {
+  font-family: $nm-font--stencil;
+  font-weight: 400;
+
+  &:before {
+    content: "";
+    display: block;
+    float: left;
+    //background: $nm-white;
+    width: 24px;
+    height: 24px;
+    //margin-left: -12px;
+    margin-right: 12px;
+    margin-bottom: 8px;
+    vertical-align: baseline;
+    border: 9px solid $nm-orange;
+    border-radius: 50%;
+  }
+}
+
+.nm-font--stencil {
+  font-family: $nm-font--stencil;
+  font-weight: normal;
 }
