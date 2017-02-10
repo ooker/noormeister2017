@@ -24,11 +24,11 @@ Template Post Type: page, toetaja
 
 
 
-					<div class="nm-supporters">
+	<!--				<div class="nm-supporters">
 
 
-          <!-- The Loop -->
           <?php
+					/*
             $args = array( 'post_type' => 'toetaja' );
             $loop = new WP_Query( $args );
             while ( $loop->have_posts() ) : $loop->the_post();
@@ -38,12 +38,10 @@ Template Post Type: page, toetaja
                 echo '<div class="nm-supporter__text">' . get_the_title() . '</div>';
               echo '</a>';
             endwhile;
-
+*/
             ?>
 
-            <!-- End Loop -->
-
-					</div>
+					</div>-->
 				</div>
 
 			</section>

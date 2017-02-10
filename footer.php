@@ -1,27 +1,16 @@
 		</section><!-- /.nm-mainContent-->
 
 		<!-- Sponsorite logod -->
-		<section class="container-fluid nm-footer__logobar">
+		<!--<section class="container-fluid nm-footer__logobar">
 
-			<!--
-			<div style="display:none;" id="carousel_container">
-				<div class="nav_left"><img src="<?php //echo get_bloginfo('template_directory') ?>/images/left.png" title=""/></div>
-				<div class="nav_right"><img src="<?php //echo get_bloginfo('template_directory') ?>/images/right.png" title=""/></div>
-				<ol>
-					<?php //dynamic_sidebar('logo_widget_area'); ?>
-				</ol>
-			</div>
-			-->
 			<div id="carousel_container" class="owl-carousel" >
 				<?php
 
-				$args = array( 'post_type' => 'toetaja' );
+				/*$args = array( 'post_type' => 'toetaja' );
 				$loop = new WP_Query( $args );
 				while ( $loop->have_posts() ) : $loop->the_post();
 						echo '<img class="item" src="' . get_the_post_thumbnail_url() . '" alt="'. get_the_title() .'">';
-				endwhile;
-
-
+				endwhile;*/
 
 					/*$handle = opendir(dirname(realpath(__FILE__)).'/logos/');
 					while($file = readdir($handle)){
@@ -31,7 +20,7 @@
 					}*/
 				?>
 			</div>
-		</section>
+		</section>-->
 
 
 		<!-- FOOTER -->
