@@ -124,21 +124,7 @@ function theme_widgets_init() {
 
 add_action( 'init', 'theme_widgets_init' );
 
-/*$header_img = array(
-  'flex-width'    => true,
-  'width'         => 1284,
-  'flex-height'    => true,
-  'height'        => 494,
-  'default-image' => get_template_directory_uri() . '/images/header_bg_14.png',
-);
-add_theme_support( 'custom-header', $header_img );*/
-
 add_theme_support( 'post-thumbnails' );
-
-
-
-
-
 
 /*
   Setting up Column shortcodes plugin for nm17 theme
@@ -148,9 +134,9 @@ add_filter( 'cpsh_hide_padding_settings', '__return_true' );
 
 // hiding unnecessary column sets
 function hide_column_shortcodes( $shortcodes ) {
-    unset( $shortcodes['full_width'] );
-    // unset( $shortcodes['one_half'] );
-    unset( $shortcodes['one_third'] );
+    //unset( $shortcodes['full_width'] );
+    //unset( $shortcodes['one_half'] );
+    //unset( $shortcodes['one_third'] );
     unset( $shortcodes['one_fourth'] );
     unset( $shortcodes['two_third'] );
     unset( $shortcodes['three_fourth'] );

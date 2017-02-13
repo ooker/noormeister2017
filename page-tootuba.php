@@ -38,8 +38,8 @@ Template Post Type: page, tootuba
 						<div class="entry-content">
 							<?php the_content() ?>
 						</div><!-- .entry-content -->
-					</div><!-- #post-## -->
-					<?php endwhile; // end of the loop. ?>
+					</div>
+					<?php endwhile; ?>
 
 
 
