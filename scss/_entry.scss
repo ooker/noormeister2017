@@ -74,6 +74,9 @@
     //background: $nm-white;
     //border: 1px solid red;
   }
+  .clear_column {
+    display: none !important;
+  }
   .full_width {
     flex: 1 0 100%;
     //padding: 4vh 3vw 1vh 4vw;
@@ -99,14 +102,14 @@
     .content-column {}
 
     .one_half {
-      flex: 0 1 47%;
+      flex: 1 0 47%;
       //padding: 0 0 3vh 0;
       &.last_column {
         //padding: 4vh 3vw 4vh 2vw;
       }
     }
     .one_third {
-      flex: 0 1 31%;
+      flex: 1 0 31%;
       //padding: 4vh 3vw 1vh 4vw;
     }
   }

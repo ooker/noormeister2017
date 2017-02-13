@@ -676,6 +676,8 @@ footer {
   margin-bottom: 6vh;
   padding: 5vmin;
   background: #fff; }
+  .nm-columnsContainer .clear_column {
+    display: none !important; }
   .nm-columnsContainer .full_width {
     -ms-flex: 1 0 100%;
         flex: 1 0 100%; }
@@ -690,11 +692,11 @@ footer {
   .nm-columnsContainer {
     padding: 5vmin; }
     .nm-columnsContainer .one_half {
-      -ms-flex: 0 1 47%;
-          flex: 0 1 47%; }
+      -ms-flex: 1 0 47%;
+          flex: 1 0 47%; }
     .nm-columnsContainer .one_third {
-      -ms-flex: 0 1 31%;
-          flex: 0 1 31%; }
+      -ms-flex: 1 0 31%;
+          flex: 1 0 31%; }
   #wpgmza_map {
     border: 10px solid #7da739; } }
 
