@@ -8,11 +8,6 @@
 		<link rel="sitemap" href="sitemap.xml" type="application/xml" />
 		<link rel="shortcut icon" href="/favicon.ico" />
 
-		<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_bloginfo('template_directory') ?>/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-		<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_bloginfo('template_directory') ?>/css/style17.min.css" />
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/owl.carousel.css" />
-
 		<?php wp_head(); ?>
 	</head>
 

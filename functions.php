@@ -16,27 +16,33 @@ register_sidebar(array(
 ));
 */
 
-// Register Script
-/*function nm_scripts() {
-  wp_register_script( 'nm_jquery', 'js/jquery-3.1.1.min.js', false, false, true );
 
-	wp_register_script( 'nm_script', 'js/skript.js', array( 'jquery', ' bootstrap', ' owlcarousel' ), false, true );
-	wp_enqueue_script( 'nm_script' );
-
-
-
+function register_styles(){
+  wp_enqueue_style( 'style_bootstrap',
+    get_template_directory_uri() . '/css/bootstrap.min.css',
+    false, '4', 'all'
+  );
+  wp_enqueue_style( 'style_main',
+    get_template_directory_uri() . '/style.css',
+    false, '1', 'all'
+  );
+  wp_enqueue_style( 'style_nm',
+    get_template_directory_uri() . '/css/style17.css',
+    array('style_main', 'style_bootstrap'), '1', 'all'
+  );
+  wp_enqueue_style( 'style_owl',
+    get_template_directory_uri() . '/css/owl.carousel.css',
+    false, '2', 'all'
+  );
 }
-add_action( 'wp_enqueue_scripts', 'nm_scripts' );*/
-
+add_action( 'wp_enqueue_scripts', 'register_styles' );
 
 function register_scripts() {
   if (!is_admin()){
-	   wp_deregister_script('jquery'); // Lets use the most modern version rather than the one packaged with Wordpress
-    // wp_deregister_script( 'l10n' ); // Unneccessary http request made by WP
-    // Add scripts to this array as neccessary
+    wp_deregister_script('jquery');
     $scripts = array(
       'jquery' => array(
-      'url' => get_bloginfo('template_directory').'/js/jquery-3.1.1.min.js',
+      'url' => get_stylesheet_directory_uri().'/js/jquery-3.1.1.min.js',
       'dependencies' => false,
       'version' => '3.1.1',
       'in_footer' => true
@@ -48,19 +54,19 @@ function register_scripts() {
     	'in_footer' => true
     ),
     'bootstrap' => array(
-    	'url' => get_bloginfo('template_directory').'/js/bootstrap.min.js',
+    	'url' => get_stylesheet_directory_uri().'/js/bootstrap.min.js',
     	'dependencies' => array('tether'),
-    	'version' => '4.0.1',
+    	'version' => '4',
     	'in_footer' => true
     ),
     'owlcarousel' => array(
-    	'url' => get_bloginfo('template_directory').'/js/owl.carousel.min.js',
+    	'url' => get_stylesheet_directory_uri().'/js/owl.carousel.min.js',
     	'dependencies' => false,
     	'version' => '1',
     	'in_footer' => true
     ),
     'main' => array(
-    	'url' => get_bloginfo('template_directory').'/js/skript.js',
+    	'url' => get_stylesheet_directory_uri().'/js/skript.js',
     	'dependencies' => array('jquery', 'bootstrap', 'owlcarousel'),
     	'version' => '0.1',
     	'in_footer' => true
