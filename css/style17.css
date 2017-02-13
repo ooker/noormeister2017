@@ -693,10 +693,16 @@ footer {
     padding: 5vmin; }
     .nm-columnsContainer .one_half {
       -ms-flex: 1 0 47%;
-          flex: 1 0 47%; }
+          flex: 1 0 47%;
+      padding: 0 2.5vmin 0 0; }
+      .nm-columnsContainer .one_half.last_column {
+        padding: 0 0 0 2.5vmin; }
     .nm-columnsContainer .one_third {
       -ms-flex: 1 0 31%;
-          flex: 1 0 31%; }
+          flex: 1 0 31%;
+      padding: 0 1.5vmin 0 0; }
+      .nm-columnsContainer .one_third.last_column {
+        padding: 0 0 0 1.5vmin; }
   #wpgmza_map {
     border: 10px solid #7da739; } }
 

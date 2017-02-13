@@ -99,18 +99,24 @@
   .nm-columnsContainer {
     padding: 5vmin;
 
-    .content-column {}
+    .content-column {
+      //border:1px solid red;
+    }
 
     .one_half {
       flex: 1 0 47%;
-      //padding: 0 0 3vh 0;
+      padding: 0 2.5vmin 0 0;
       &.last_column {
+        padding: 0 0 0 2.5vmin;
         //padding: 4vh 3vw 4vh 2vw;
       }
     }
     .one_third {
       flex: 1 0 31%;
-      //padding: 4vh 3vw 1vh 4vw;
+      padding: 0 1.5vmin 0 0;
+      &.last_column {
+        padding: 0 0 0 1.5vmin;
+      }
     }
   }
 
