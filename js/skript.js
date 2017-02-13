@@ -73,6 +73,37 @@ function initResponsiveNav(){
   });
 }
 
+function initOwlCarousel(){
+  $('.owl-carousel').owlCarousel({
+    loop:true,
+    autoplay:true,
+    autoplayTimeout:4000,
+    margin:20,
+    slideBy:4,
+    responsiveClass:true,
+    responsive:{
+      0:{
+        items:3,
+        nav:false
+      },
+      600:{
+        items:5,
+        nav:false
+      },
+      1000:{
+        items:10,
+        nav:false,
+        loop:true
+      },
+      1900:{
+        items:10,
+        nav:false,
+        loop:true
+      }
+    }
+  });
+}
+
 function getModalContent(type, id, index) {
   var postUrl = "/wp-json/wp/v2/"+type+"/"+id;
   $.ajax( {
@@ -111,7 +142,7 @@ $(document).ready(function() {
   initModals();
   initResponsiveNav();
   animateBackground();
-
+  initOwlCarousel();
 });
 
 

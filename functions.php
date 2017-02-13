@@ -15,6 +15,72 @@ register_sidebar(array(
     'after_title' => '</h6>',
 ));
 */
+
+// Register Script
+/*function nm_scripts() {
+  wp_register_script( 'nm_jquery', 'js/jquery-3.1.1.min.js', false, false, true );
+
+	wp_register_script( 'nm_script', 'js/skript.js', array( 'jquery', ' bootstrap', ' owlcarousel' ), false, true );
+	wp_enqueue_script( 'nm_script' );
+
+
+
+}
+add_action( 'wp_enqueue_scripts', 'nm_scripts' );*/
+
+
+function register_scripts() {
+  if (!is_admin()){
+	   wp_deregister_script('jquery'); // Lets use the most modern version rather than the one packaged with Wordpress
+    // wp_deregister_script( 'l10n' ); // Unneccessary http request made by WP
+    // Add scripts to this array as neccessary
+    $scripts = array(
+      'jquery' => array(
+      'url' => get_bloginfo('template_directory').'/js/jquery-3.1.1.min.js',
+      'dependencies' => false,
+      'version' => '3.1.1',
+      'in_footer' => true
+    ),
+    'tether' => array(
+    	'url' => 'https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js',
+    	'dependencies' => false,
+    	'version' => '1.2.4',
+    	'in_footer' => true
+    ),
+    'bootstrap' => array(
+    	'url' => get_bloginfo('template_directory').'/js/bootstrap.min.js',
+    	'dependencies' => array('tether'),
+    	'version' => '4.0.1',
+    	'in_footer' => true
+    ),
+    'owlcarousel' => array(
+    	'url' => get_bloginfo('template_directory').'/js/owl.carousel.min.js',
+    	'dependencies' => false,
+    	'version' => '1',
+    	'in_footer' => true
+    ),
+    'main' => array(
+    	'url' => get_bloginfo('template_directory').'/js/skript.js',
+    	'dependencies' => array('jquery', 'bootstrap', 'owlcarousel'),
+    	'version' => '0.1',
+    	'in_footer' => true
+    )
+  );
+  // Register and enqueue the above scripts
+	foreach($scripts as $key => $val){
+	  if ( $val != '')
+	    wp_register_script($key, $val['url'], $val['dependencies'], $val['version'], $val['in_footer']);
+	    if ( isset( $val['params'] ) ){
+	      wp_localize_script( $key, $key . 'ScriptParams', $val['params'] );
+	    }
+	    wp_enqueue_script($key);
+	  }
+  }
+}
+add_action('init', 'register_scripts');
+
+
+
 register_sidebar(array(
     'name' => 'Uudiste arhiiv',
     'before_widget' => '<div>',

@@ -64,7 +64,6 @@
 				</div>-->
 			</div>
 
-
 			<!-- Contact in footer -->
 			<div class="row nm-footer__contact">
 				<div class="col-md">
@@ -76,55 +75,8 @@
 				<div class="col-md">
 					Telefon: <a href="tel:+3727350716" target="_blank">735&nbsp;0716</a>
 				</div>
-
 			</div>
-
-
 		</footer>
-
-		<script src="<?php echo get_bloginfo('template_directory') ?>/js/jquery-3.1.1.min.js" type="text/javascript"></script>
-		<!-- <script src="<?php echo get_bloginfo('template_directory') ?>/js/turbo.js" type="text/javascript"></script> -->
-		<!-- <script src="<?php echo get_bloginfo('template_directory') ?>/js/slider.js" type="text/javascript"></script> -->
-
-		<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js" type="text/javascript"></script>
-		<script src="<?php echo get_bloginfo('template_directory') ?>/js/bootstrap.min.js" type="text/javascript"></script>
-		<script src="<?php echo get_bloginfo('template_directory') ?>/js/owl.carousel.min.js" type="text/javascript"></script>
-		<script type="text/javascript">
-			jQuery(document).ready(function($) {
-			    $('.owl-carousel').owlCarousel(
-			    {
-			    	loop:true,
-			    	autoplay:true,
-			    	autoplayTimeout:4000,
-				    margin:10,
-				    slideBy:4,
-				    responsiveClass:true,
-						responsive:{
-				        0:{
-				            items:3,
-				            nav:false
-				        },
-				        600:{
-				            items:5,
-				            nav:false
-				        },
-				        1000:{
-				            items:10,
-				            nav:false,
-				            loop:true
-				        },
-								1900:{
-				            items:10,
-				            nav:false,
-				            loop:true
-				        }
-				    }
-				});
-			});
-
-		</script>
-
-		<script src="<?php echo get_bloginfo('template_directory') ?>/js/skript.js" type="text/javascript"></script>
 
 		<script type="text/javascript">
 
