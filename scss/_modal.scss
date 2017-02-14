@@ -22,7 +22,7 @@
 
   span {
     color: $nm-white;
-    font-size: 2rem;
+    font-size: 1.6rem;
     line-height: 0;
     text-shadow: none;
   }
@@ -45,12 +45,12 @@
   align-items: center;
 
   position: fixed;
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
   padding: 0;
   margin: 0;
 
-  border-radius: 50%;
+  ///border-radius: 50%;
   top: 48vh;
   font-size: 2rem;
   line-height: 1;
@@ -61,16 +61,40 @@
 }
 
 .nm-modal__btnPrev {
-  left: 3vw;
-  transition: transform 0.3s ease;
-  &:hover {
-    transform: translateX(-8px);
-  }
+  left: 0;
 }
 .nm-modal__btnNext {
-  right: 3vw;
-  transition: transform 0.3s ease;
-  &:hover {
-    transform: translateX(8px);
+  right: 0;
+}
+
+@media (min-width: 992px){
+
+  .nm-modal__btnNav {
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    margin: 0;
+
+    border-radius: 50%;
+    top: 48vh;
+    font-size: 2rem;
+
   }
+
+  .nm-modal__btnPrev {
+    left: 3vw;
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: translateX(-8px);
+    }
+  }
+  .nm-modal__btnNext {
+    right: 3vw;
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: translateX(8px);
+    }
+  }
+
+
 }

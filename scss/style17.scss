@@ -26,8 +26,8 @@ h1, h2, h3, h4, h5 {
 
 .nm-title {
   position: relative;
-  font-size: 3rem;
-  margin: 3vh 0 10vh 0;
+  font-size: 2.4rem;
+  margin: 5vh 0 5vh 0;
   padding-bottom: 3vh;
   font-family: $nm-font--stencil;
   font-weight: 400;
@@ -91,4 +91,11 @@ h1, h2, h3, h4, h5 {
 .nm-font--stencil {
   font-family: $nm-font--stencil;
   font-weight: normal;
+}
+
+
+@media (min-width: 992px){
+  .nm-title {
+    font-size: 3rem;
+  }
 }

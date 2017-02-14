@@ -28,8 +28,8 @@ h1, h2, h3, h4, h5 {
 
 .nm-title {
   position: relative;
-  font-size: 3rem;
-  margin: 3vh 0 10vh 0;
+  font-size: 2.4rem;
+  margin: 5vh 0 5vh 0;
   padding-bottom: 3vh;
   font-family: "Gunplay", sans-serif;
   font-weight: 400;
@@ -169,8 +169,8 @@ h1, h2, h3, h4, h5 {
       justify-content: center;
   -ms-flex-align: center;
       align-items: center;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   background: #f4a825;
   border: 5px solid #da8e0b;
   border-radius: 50%;
@@ -180,7 +180,7 @@ h1, h2, h3, h4, h5 {
   .nm-navSwapper:hover {
     background: #da8e0b;
     border: 5px solid #f5b13d;
-    box-shadow: 0 7px 6px 3px rgba(0, 0, 0, 0.4); }
+    box-shadow: 0 4px 4px 2px rgba(0, 0, 0, 0.4); }
   .nm-navSwapper svg {
     width: 50%;
     height: auto; }
@@ -489,7 +489,7 @@ footer {
   transition: all 0.5s ease; }
   .nm-modalClose span {
     color: #fff;
-    font-size: 2rem;
+    font-size: 1.6rem;
     line-height: 0;
     text-shadow: none; }
   .nm-modalClose:hover {
@@ -507,11 +507,10 @@ footer {
   -ms-flex-align: center;
       align-items: center;
   position: fixed;
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
   padding: 0;
   margin: 0;
-  border-radius: 50%;
   top: 48vh;
   font-size: 2rem;
   line-height: 1;
@@ -520,18 +519,32 @@ footer {
   cursor: pointer; }
 
 .nm-modal__btnPrev {
-  left: 3vw;
-  transition: transform 0.3s ease; }
-  .nm-modal__btnPrev:hover {
-    -ms-transform: translateX(-8px);
-        transform: translateX(-8px); }
+  left: 0; }
 
 .nm-modal__btnNext {
-  right: 3vw;
-  transition: transform 0.3s ease; }
-  .nm-modal__btnNext:hover {
-    -ms-transform: translateX(8px);
-        transform: translateX(8px); }
+  right: 0; }
+
+@media (min-width: 992px) {
+  .nm-modal__btnNav {
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    top: 48vh;
+    font-size: 2rem; }
+  .nm-modal__btnPrev {
+    left: 3vw;
+    transition: transform 0.3s ease; }
+    .nm-modal__btnPrev:hover {
+      -ms-transform: translateX(-8px);
+          transform: translateX(-8px); }
+  .nm-modal__btnNext {
+    right: 3vw;
+    transition: transform 0.3s ease; }
+    .nm-modal__btnNext:hover {
+      -ms-transform: translateX(8px);
+          transform: translateX(8px); } }
 
 .nm-social {
   position: absolute;
@@ -788,3 +801,7 @@ footer {
 .nm-font--stencil {
   font-family: "Gunplay", sans-serif;
   font-weight: normal; }
+
+@media (min-width: 992px) {
+  .nm-title {
+    font-size: 3rem; } }
