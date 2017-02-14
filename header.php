@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<title><?php bloginfo('name');?></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- <meta name="google-site-verification" content="77raGIaSvZucOR4VaSrXlTJI1341fzonVVUCQx8KtWI" /> -->
+		<meta name="google-site-verification" content="77raGIaSvZucOR4VaSrXlTJI1341fzonVVUCQx8KtWI" />
 		<link rel="sitemap" href="sitemap.xml" type="application/xml" />
 		<link rel="shortcut icon" href="/favicon.ico" />
 
@@ -16,7 +16,7 @@
 
 		<div class="nm-pageBg">
 			<svg class="nm-pageBg__svg" viewBox="0 0 100 100" preserveAspectRatio="none"
-			xmlns:nmdata="http://www.myexample.com/whatever">
+			xmlns:nmdata="http://www.nooreister.ee">
 
 					<?php if ( is_front_page() ): ?>
 						<path d="M0,0 H100 V100 H0" style="fill:hsl(83, 49%, 49%);"></path>
@@ -68,12 +68,12 @@
 		<header class="container-fluid nm-headerTop" <?php if(is_front_page()) echo 'style="padding-top:0;"'; ?> >
 			<div class="container">
 				<div class="row nm-headerTop__logo align-items-center" <?php if(is_front_page()) echo 'style="display:none;"'; ?> >
-					<div class="col-4 col-sm-3 col-lg-2">
+					<div class="col-5 col-sm-4 col-lg-2">
 						<a href="<?php echo home_url(); ?>">
 							<img class="nm-headerTop__logo__img" src="<?php echo get_template_directory_uri(); ?>/images/nm-logo-17_neg_alternative.svg" alt="Noor Meister 2017" />
 						</a>
 					</div>
-					<div class="col-8 col-sm-9 col-lg-10">
+					<div class="col-7 col-sm-8 col-lg-10">
 						<h4 class="nm-headerTop__date">4.-5. mail Tallinnas</h4>
 					</div>
 				</div>
