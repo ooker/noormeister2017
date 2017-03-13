@@ -106,34 +106,37 @@ function initOwlCarousel(){
 
 function getModalContent(type, id, index) {
   var postUrl = "/wp-json/wp/v2/"+type+"/"+id;
+  //var postUrl = "http://noormeister.innove.ee/wp-json/wp/v2/uudis/333";
   $.ajax( {
     url: postUrl,
-      success: function ( restData ) {
-        // var post = data.shift();
-        // $( '#quote-title' ).text( post.title );
-        $( '.nm-modalFooter' ).data("callerindex", index);
-        $( '.modal-body' ).html( restData.content.rendered );
-        $( '.modal-title' ).html( restData.title.rendered );
-        //console.log(restData);
+    //contentType: "application/json;charset=utf-8",
+    dataType: "json",
+    success: function ( restData ) {
+      // var post = data.shift();
+      // $( '#quote-title' ).text( post.title );
+      $( '.nm-modalFooter' ).data("callerindex", index);
+      $( '.modal-body' ).html( restData.content.rendered );
+      $( '.modal-title' ).html( restData.title.rendered );
+      //console.log(restData);
+      $('.nm-modal__btnPrev').prop("disabled", false);
+      $('.nm-modal__btnNext').prop("disabled", false);
+      /*
+      if(index > 0){
         $('.nm-modal__btnPrev').prop("disabled", false);
+        $('.nm-modal__btnPrev').css({"visibility":"visible"});
+      } else {
+        $('.nm-modal__btnPrev').css({"visibility":"hidden"});
+      }
+      if(  ){
         $('.nm-modal__btnNext').prop("disabled", false);
-        /*
-        if(index > 0){
-          $('.nm-modal__btnPrev').prop("disabled", false);
-          $('.nm-modal__btnPrev').css({"visibility":"visible"});
-        } else {
-          $('.nm-modal__btnPrev').css({"visibility":"hidden"});
-        }
-        if(  ){
-          $('.nm-modal__btnNext').prop("disabled", false);
-          $('.nm-modal__btnNext').css({"visibility":"visible"});
-        } else {
-          $('.nm-modal__btnNext').css({"visibility":"hidden"});
-        }
-        */
-      },
-      cache: true
-    } );
+        $('.nm-modal__btnNext').css({"visibility":"visible"});
+      } else {
+        $('.nm-modal__btnNext').css({"visibility":"hidden"});
+      }
+      */
+    },
+    cache: true
+  } );
 }
 
 $(document).ready(function() {
