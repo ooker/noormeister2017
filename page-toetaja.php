@@ -22,14 +22,28 @@ Template Post Type: page, toetaja
 					</div><!-- #post-## -->
 					<?php endwhile; // end of the loop. ?>
 
+					<h3>Suursponsorid:</h3>
 
-
-	<!--				<div class="nm-supporters">
-
-
-          <?php
-					/*
-            $args = array( 'post_type' => 'toetaja' );
+					<div class="nm-supporters">
+        	<?php
+						$args = array(
+							'post_type' => 'toetaja',
+							'category_name' => 'toetaja-suursponsor'
+							/*
+							'meta_query'	=> array(
+								'relation'		=> 'OR',
+								array(
+									'key'		=> 'Toetaja_kategooria',
+									'value'		=> '0',
+									'compare'	=> 'LIKE'
+								),
+								array(
+									'key'		=> 'Toetaja_kategooria',
+									'value'		=> 'Sydney',
+									'compare'	=> 'LIKE'
+								)
+							)*/
+						);
             $loop = new WP_Query( $args );
             while ( $loop->have_posts() ) : $loop->the_post();
                 echo '<a href="' . get_post_meta(get_the_ID(), 'Toetaja_URL', true) . '" class="nm-card nm-supporter" target="_blank">';
@@ -38,10 +52,53 @@ Template Post Type: page, toetaja
                 echo '<div class="nm-supporter__text">' . get_the_title() . '</div>';
               echo '</a>';
             endwhile;
-*/
+
             ?>
 
-					</div>-->
+					</div>
+
+					<h3>Sponsorid:</h3>
+
+					<div class="nm-supporters">
+        	<?php
+						$args = array(
+							'post_type' => 'toetaja',
+							'category_name' => 'toetaja-sponsor'
+						);
+            $loop = new WP_Query( $args );
+            while ( $loop->have_posts() ) : $loop->the_post();
+                echo '<a href="' . get_post_meta(get_the_ID(), 'Toetaja_URL', true) . '" class="nm-card nm-supporter" target="_blank">';
+                echo '<div class="nm-supporter__img"><img src="' . get_the_post_thumbnail_url() . '"></div>';
+                echo '<hr>';
+                echo '<div class="nm-supporter__text">' . get_the_title() . '</div>';
+              echo '</a>';
+            endwhile;
+
+            ?>
+
+					</div>
+
+					<h3>Koostööpartnerid:</h3>
+
+					<div class="nm-supporters">
+        	<?php
+						$args = array(
+							'post_type' => 'toetaja',
+							'category_name' => 'toetaja-koostoopartner'
+						);
+            $loop = new WP_Query( $args );
+            while ( $loop->have_posts() ) : $loop->the_post();
+                echo '<a href="' . get_post_meta(get_the_ID(), 'Toetaja_URL', true) . '" class="nm-card nm-supporter" target="_blank">';
+                echo '<div class="nm-supporter__img"><img src="' . get_the_post_thumbnail_url() . '"></div>';
+                echo '<hr>';
+                echo '<div class="nm-supporter__text">' . get_the_title() . '</div>';
+              echo '</a>';
+            endwhile;
+
+            ?>
+
+					</div>
+
 				</div>
 
 			</section>
