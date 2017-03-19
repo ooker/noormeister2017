@@ -28,7 +28,9 @@ Template Post Type: page, toetaja
         	<?php
 						$args = array(
 							'post_type' => 'toetaja',
-							'category_name' => 'toetaja-suursponsor'
+							'category_name' => 'toetaja-suursponsor',
+							'orderby' => 'title',
+							'order' => 'ASC'
 							/*
 							'meta_query'	=> array(
 								'relation'		=> 'OR',
@@ -63,7 +65,9 @@ Template Post Type: page, toetaja
         	<?php
 						$args = array(
 							'post_type' => 'toetaja',
-							'category_name' => 'toetaja-sponsor'
+							'category_name' => 'toetaja-sponsor',
+							'orderby' => 'title',
+							'order' => 'ASC'
 						);
             $loop = new WP_Query( $args );
             while ( $loop->have_posts() ) : $loop->the_post();
@@ -84,7 +88,9 @@ Template Post Type: page, toetaja
         	<?php
 						$args = array(
 							'post_type' => 'toetaja',
-							'category_name' => 'toetaja-koostoopartner'
+							'category_name' => 'toetaja-koostoopartner',
+							'orderby' => 'title',
+							'order' => 'ASC'
 						);
             $loop = new WP_Query( $args );
             while ( $loop->have_posts() ) : $loop->the_post();
