@@ -6,7 +6,7 @@
 			<div id="carousel_container" class="owl-carousel" >
 				<?php
 
-				$args = array( 'post_type' => 'toetaja' );
+				$args = array( 'post_type' => 'toetaja', 'posts_per_page' => -1 );
 				$loop = new WP_Query( $args );
 				while ( $loop->have_posts() ) : $loop->the_post();
 						echo '<img class="item" src="' . get_the_post_thumbnail_url() . '" alt="'. get_the_title() .'">';

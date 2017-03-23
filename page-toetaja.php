@@ -27,6 +27,7 @@ Template Post Type: page, toetaja
 					<div class="nm-supporters">
         	<?php
 						$args = array(
+							'posts_per_page' => -1,
 							'post_type' => 'toetaja',
 							'category_name' => 'toetaja-suursponsor',
 							'orderby' => 'title',
@@ -64,6 +65,7 @@ Template Post Type: page, toetaja
 					<div class="nm-supporters">
         	<?php
 						$args = array(
+							'posts_per_page' => -1,
 							'post_type' => 'toetaja',
 							'category_name' => 'toetaja-sponsor',
 							'orderby' => 'title',
@@ -87,6 +89,7 @@ Template Post Type: page, toetaja
 					<div class="nm-supporters">
         	<?php
 						$args = array(
+							'posts_per_page' => -1, 
 							'post_type' => 'toetaja',
 							'category_name' => 'toetaja-koostoopartner',
 							'orderby' => 'title',

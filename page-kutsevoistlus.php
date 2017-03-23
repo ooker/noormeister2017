@@ -24,7 +24,7 @@ Template Post Type: page, kutsevoistlus
 
 					<div class="nm-pictos">
           <?php
-					 $args = array( 'post_type' => 'kutsevoistlus', 'posts_per_page' => 40, 'orderby' => 'title', 'order' => 'ASC' );
+					 $args = array( 'post_type' => 'kutsevoistlus', 'posts_per_page' => -1, 'orderby' => 'title', 'order' => 'ASC' );
             $loop = new WP_Query( $args );
             while ( $loop->have_posts() ) : $loop->the_post();
                 echo '<a href="#" data-id="' . get_the_ID() . '" data-modal-type="kutsevoistlus" class="nm-modal-opener nm-picto nm-rest__listItem">';

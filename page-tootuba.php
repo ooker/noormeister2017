@@ -48,7 +48,7 @@ Template Post Type: page, tootuba
 
           <?php
 
-            $args = array( 'post_type' => 'tootuba', 'orderby' => 'title', 'order' => 'ASC' );
+            $args = array( 'post_type' => 'tootuba', 'posts_per_page' => -1, 'orderby' => 'title', 'order' => 'ASC' );
             $loop = new WP_Query( $args );
             while ( $loop->have_posts() ) : $loop->the_post();
                 echo '<a href="#" data-id="' . get_the_ID() . '" data-modal-type="tootuba" class="nm-modal-opener nm-picto nm-rest__listItem">';
