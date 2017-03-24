@@ -39,14 +39,16 @@
   &__text {
     position: absolute;
     top: 70%;
-    left: 15%;
-    color: $nm-white;
-    width: 70%;
+    left: 0;
+    padding: 0 10%;
+    width: 100%;
     font-family: $nm-font;
-    font-size: 0.85rem;
+    font-size: 0.68rem;
     line-height: 1.15;
+    color: $nm-white;
     text-transform: uppercase;
     text-align: center;
+    hyphens: auto;
   }
 
   &:hover {
@@ -94,6 +96,12 @@
 
 
 @media screen and (min-width:768px) {
+  .nm-picto {
+    &__text {
+      font-size: 0.85rem;
+    }
+  }
+
   .nm-columnsContainer {
     padding: 5vmin;
 
