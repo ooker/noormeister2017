@@ -115,10 +115,10 @@
 
 				<div class="nm-fpIntro__what">
 					<h2>Mis toimub?</h2>
-					<h5><b>KUTSE&shy;MEISTRI&shy;VÕISTLUSED:</b><br />32 eriala ja üle 400 võistleja</h5>
+					<h5><b>KUTSE&shy;MEISTRI&shy;VÕISTLUSED:</b><br />31 eriala ja ligi 400 võistlejat</h5>
 					<h5><b>KUTSEHARIDUSMESS:</b><br />kõik oluline kutseharidusest ja <b>põnevad töötoad</b></h5>
 					<h5>Huvitav <b>LAVAPROGRAMM</b></h5>
-					<h5><b>Esineb Karl Erik Taukar Band</b></h5>
+					<h5><b>Esineb Karl-Erik Taukar Band</b></h5>
 					<hr style="width: 100%"/>
 					<a href="/kava" class="btn btn-primary btn-lg nm-fpIntro__btn">VAATA JÄRGI</a>
 				</div>
